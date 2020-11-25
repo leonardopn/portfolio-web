@@ -1,0 +1,24 @@
+.divCurriculo {
+    flex           : 1;
+    display        : flex;
+    justify-content: center;
+    flex-wrap      : wrap;
+}
+
+#cardDefault100 {
+    flex: 1;
+}
+
+#divIframePDF {
+    height: 100vh;
+}
+
+.divCurriculo img{
+    width: 45px;
+}
+
+@media (max-width: 660px) {
+    .divCurriculo img{
+        width: 30px;
+    }
+}

@@ -1,0 +1,19 @@
+.divPrincipal {
+    background-color: rgb(107, 107, 250);
+    padding         : 0px 15px 15px 15px;
+    max-width       : 280px;
+    color           : #fff;
+    border-radius   : 0px 0px 20px 0px;
+}
+
+.divPrincipal #scrollMenu {
+    top:0px;
+    position  : sticky;
+}
+
+@media (max-width: 660px){
+    .divPrincipal {
+        max-width: 100%;
+        border-radius   : 0px 0px 0px 0px;
+    }
+}

@@ -1,0 +1,23 @@
+.divContato #divCardsContato {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#cardDefault100{
+    flex: 1;
+}
+
+#cardDois100{
+    flex: 1;
+}
+
+.divContato img{
+    width: 45px;
+}
+
+@media (max-width: 660px) {
+    .divContato img{
+        width: 30px;
+    }
+}

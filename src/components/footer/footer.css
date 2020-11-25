@@ -1,0 +1,11 @@
+.footer{
+    height: 100%;
+    background-color: rgb(107, 107, 250);
+}
+
+.footer #copyright{
+    height: 25px;
+    background-color: #282828;
+    text-align: center;
+    color: #fff
+}

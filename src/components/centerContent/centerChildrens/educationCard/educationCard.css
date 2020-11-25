@@ -1,0 +1,37 @@
+.divFormacao {
+    display        : flex;
+    flex-wrap      : wrap;
+    align-items    : flex-start;
+    justify-content: center;
+
+    color: rgb(59, 59, 59);
+}
+
+.divFormacao h2{
+    max-width: 350px;
+}
+
+.divFormacao img{
+    width: 45px;
+    
+}
+
+@media (max-width: 660px) {
+    .divFormacao img {
+        width: 30px;
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    .divFormacao #cardFormacao, #cardCurso{
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1430px) {
+    .divFormacao #cardFormacao, #cardCurso{
+        flex: 1;
+    }
+}
+
+

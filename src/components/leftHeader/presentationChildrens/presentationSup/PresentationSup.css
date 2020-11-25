@@ -1,0 +1,33 @@
+.divSup {
+    padding: 10px;
+
+    display         : flex;
+    flex-wrap       : wrap;
+    align-items     : center;
+    justify-content : center;
+}
+
+.divSup h1{
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.divSup p{
+    font-style: oblique;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.divSup #imgProfile{
+    width: 150px;
+    border-top-left-radius: 50% 50%;
+    border-top-right-radius: 50% 50%;
+    border-bottom-right-radius: 50% 50%;
+    border-bottom-left-radius: 50% 50%;
+}
+
+@media (max-width: 660px){
+    .divSup {
+        flex-direction: column;
+    }
+}

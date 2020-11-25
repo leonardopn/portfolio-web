@@ -1,0 +1,12 @@
+.divCenter {
+    padding: 15px;
+
+    display         : flex;
+    flex-wrap       : wrap;
+    align-items     : flex-start;
+    justify-content : center;
+}
+
+.divCenter h1{
+    font-size: 1.1rem;
+}

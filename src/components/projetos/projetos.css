@@ -1,0 +1,27 @@
+.divProjetos {
+    flex           : 1;
+    display        : flex;
+    justify-content: center;
+    flex-wrap      : wrap;
+}
+
+.divProjetos #divProjetosInternoFlex {
+    flex           : 1;
+    display        : flex;
+    justify-content: center;
+    flex-wrap      : wrap;
+}
+
+#cardDefault100 {
+    flex: 1;
+}
+
+.divProjetos #iconeProjetos{
+    width: 45px;
+}
+
+@media (max-width: 660px) {
+    .divProjetos #iconeProjetos {
+        width: 30px;
+    }
+}

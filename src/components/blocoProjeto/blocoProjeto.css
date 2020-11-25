@@ -1,0 +1,25 @@
+.blocoProjeto {
+    background-color: #bdbdbd3f;
+    margin : 15px 10px;
+
+    border-radius: 10px;
+    border-bottom: 10px solid rgb(107, 107, 250);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+
+    max-width: 500px
+}
+
+.blocoProjeto:hover {
+    transition: 0.3s;
+    transform: scale(1.05);
+}
+
+.imgProjeto{
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.blocoProjeto p{
+    margin : 20px 15px;
+}

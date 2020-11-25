@@ -1,0 +1,40 @@
+.divTecnologias {
+    color: rgb(59, 59, 59);
+}
+
+.divTecnologias #cardTechnologies {
+    display        : flex;
+    flex-wrap      : wrap;
+    align-items    : flex-start;
+    justify-content: center;
+}
+
+.divTecnologias h2 {
+    max-width: 350px;
+}
+
+.divTecnologias img {
+    width: 45px;
+}
+
+@media (max-width: 660px) {
+    .divTecnologias img {
+        width: 30px;
+    }
+}
+
+@media screen and (max-width: 1366px) {
+
+    .divTecnologias #cardFormacao,
+    #cardCurso {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1430px) {
+
+    .divTecnologias #cardFormacao,
+    #cardCurso {
+        flex: 1;
+    }
+}
