@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/portfolio-web/static/css/main.fd6c1063.chunk.css",
+    "main.js": "/portfolio-web/static/js/main.53824571.chunk.js",
+    "main.js.map": "/portfolio-web/static/js/main.53824571.chunk.js.map",
+    "runtime-main.js": "/portfolio-web/static/js/runtime-main.a46eacad.js",
+    "runtime-main.js.map": "/portfolio-web/static/js/runtime-main.a46eacad.js.map",
+    "static/js/2.a33e9495.chunk.js": "/portfolio-web/static/js/2.a33e9495.chunk.js",
+    "static/js/2.a33e9495.chunk.js.map": "/portfolio-web/static/js/2.a33e9495.chunk.js.map",
+    "index.html": "/portfolio-web/index.html",
+    "precache-manifest.eab12675a348ed93e14c2441358f6681.js": "/portfolio-web/precache-manifest.eab12675a348ed93e14c2441358f6681.js",
+    "service-worker.js": "/portfolio-web/service-worker.js",
+    "static/css/main.fd6c1063.chunk.css.map": "/portfolio-web/static/css/main.fd6c1063.chunk.css.map",
+    "static/js/2.a33e9495.chunk.js.LICENSE.txt": "/portfolio-web/static/js/2.a33e9495.chunk.js.LICENSE.txt",
+    "static/media/defaultButton.css": "/portfolio-web/static/media/Roboto-Regular.11eabca2.ttf",
+    "static/media/icon-unip.png": "/portfolio-web/static/media/icon-unip.d251c624.png",
+    "static/media/icons8-javascript-100.png": "/portfolio-web/static/media/icons8-javascript-100.4297abcb.png",
+    "static/media/profile.png": "/portfolio-web/static/media/profile.8e32d5a8.png",
+    "static/media/profile2.jpg": "/portfolio-web/static/media/profile2.f3bd4396.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a46eacad.js",
+    "static/js/2.a33e9495.chunk.js",
+    "static/css/main.fd6c1063.chunk.css",
+    "static/js/main.53824571.chunk.js"
+  ]
+}
