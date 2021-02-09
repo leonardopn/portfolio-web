@@ -36,7 +36,7 @@ export default props => {
                 </Card>
                 <div id="divProjetosInternoFlex">
                     <BlocoProjeto img={imgJEF} linguagem="Java" projeto="JEF" repositorio="https://github.com/leonardopn/JEF" descricao={descJEF}></BlocoProjeto>
-                    <BlocoProjeto img={imgMQTT} linguagem="Javascript (React + Electron)" projeto="BinarizadorFX" repositorio="https://github.com/leonardopn/mqtt-automation-js" descricao={descMQTT}></BlocoProjeto>
+                    <BlocoProjeto img={imgMQTT} linguagem="Javascript (React + Electron)" projeto="BinarizadorFX" repositorio="https://github.com/leonardopn/MQTT.JS-Auto-Exec" descricao={descMQTT}></BlocoProjeto>
                     <BlocoProjeto img={imgJojoChat} linguagem="Java" projeto="Jojo Chat" repositorio="https://github.com/CC-UNIP-CAMPINAS/jojochat_client" descricao={descJojoChat}></BlocoProjeto>
                     <BlocoProjeto img={imgBinarizador} linguagem="Java" projeto="BinarizadorFX" repositorio="https://github.com/leonardopn/projetoPI_javafx" descricao={descBinarizador}></BlocoProjeto>
                      </div>
