@@ -42,7 +42,7 @@ function App() {
 	return (
 		<div>
 			<div className="flexDiv">
-				<Presentation operacaoPai={getJsxEscolhido} estadoBotoesMenu={estadoBotoesMenu} idBotoes={idsBotoesMenu}/>
+				<Presentation operacaoPai={getJsxEscolhido} estadoBotoesMenu={estadoBotoesMenu} idBotoes={idsBotoesMenu} />
 				<ContentPortfolio operacaoPai={getFuncaoDeTroca} conteudoCentral={about} />
 			</div>
 			<br></br>
