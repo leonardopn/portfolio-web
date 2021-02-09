@@ -7,6 +7,7 @@ import imgJava from "../../../../img/icons8-java-100.png"
 import imgJS from "../../../../img/icons8-javascript-100.png"
 import imgNode from "../../../../img/icons8-nodejs-100.png"
 import imgReact from "../../../../img/icons8-react-100.png"
+import imgRedux from "../../../../img/icons8-redux-100.png"
 import imgMysql from "../../../../img/icons8-mysql-logo-100.png"
 import imgPostgre from "../../../../img/icons8-postgresql-100.png"
 import imgLinux from "../../../../img/icons8-linux-100.png"
@@ -71,7 +72,22 @@ export default props => {
                                 </tr>
                             </tbody>
                         </table>
-                        <p>Nível: Iniciante</p>
+                        <p>Nível: Intermediário</p>
+                    </Card2>
+                    <Card2>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th>
+                                        <img src={imgRedux} alt="Logo Redux" />
+                                    </th>
+                                    <th>
+                                        <h2>Redux</h2>
+                                    </th>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>Nível: Intermediário</p>
                     </Card2>
                     <Card2>
                         <table>

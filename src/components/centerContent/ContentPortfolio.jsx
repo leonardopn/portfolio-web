@@ -13,8 +13,6 @@ export default props => {
     props.operacaoPai(mudaPage);
 
     return (
-
         divCentral
-
     )
 }

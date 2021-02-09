@@ -37,7 +37,7 @@ export default props => {
                     </tbody>
                 </table>
                 <p>Ciência da computação</p>
-                <p>6º Semestre</p>
+                <p>7º Semestre</p>
                 <p>2017-Atualmente</p>
             </Card>
             <Card id="cardCurso">
