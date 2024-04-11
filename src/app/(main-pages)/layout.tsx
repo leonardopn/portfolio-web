@@ -14,7 +14,7 @@ export default function MainPagesLayout({ children }: MainPagesLayoutProps) {
 			<ProfileResume />
 			<section className="flex flex-1 flex-col gap-5">
 				<DefaultPageHeader />
-				<CardDefault className="h-[800px] flex-1">
+				<CardDefault className="flex h-[800px] flex-1 flex-col gap-5">
 					<PageTitle />
 					{children}
 				</CardDefault>
