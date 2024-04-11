@@ -28,6 +28,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@catppuccin/tailwindcss@npm:^0.1.6":
+  version: 0.1.6
+  resolution: "@catppuccin/tailwindcss@npm:0.1.6"
+  peerDependencies:
+    tailwindcss: ">=3.0.0"
+  checksum: 10c0/461a49acfa3a526d46d50766bc963525d242b7e8a7fcff138ac2a8d24c8c8f2b6ddd6f8d7a6cca0399bbb7f71d58d3f673dca37cc1546b670775b606ebaa1f80
+  languageName: node
+  linkType: hard
+
 "@eslint-community/eslint-utils@npm:^4.2.0":
   version: 4.4.0
   resolution: "@eslint-community/eslint-utils@npm:4.4.0"
@@ -2999,6 +3008,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"next-themes@npm:^0.3.0":
+  version: 0.3.0
+  resolution: "next-themes@npm:0.3.0"
+  peerDependencies:
+    react: ^16.8 || ^17 || ^18
+    react-dom: ^16.8 || ^17 || ^18
+  checksum: 10c0/72bd670ad6b9f547dc18cece340dfd1ac41e3e7b37eb321d4767db90bfa2c239f937011cd0efe35ca0081f1ea260051bc0868808ef39b0fbff2ddefd7146cec6
+  languageName: node
+  linkType: hard
+
 "next@npm:14.1.4":
   version: 14.1.4
   resolution: "next@npm:14.1.4"
@@ -3381,6 +3400,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "portfolio-web@workspace:."
   dependencies:
+    "@catppuccin/tailwindcss": "npm:^0.1.6"
     "@radix-ui/react-slot": "npm:^1.0.2"
     "@types/node": "npm:^20"
     "@types/react": "npm:^18"
@@ -3394,6 +3414,7 @@ __metadata:
     lint-staged: "npm:^15.2.2"
     lucide-react: "npm:^0.367.0"
     next: "npm:14.1.4"
+    next-themes: "npm:^0.3.0"
     postcss: "npm:^8"
     prettier: "npm:^3.2.5"
     prettier-plugin-tailwindcss: "npm:^0.5.13"

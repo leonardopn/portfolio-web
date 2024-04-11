@@ -34,7 +34,7 @@ const config = {
 			},
 		},
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [require("tailwindcss-animate"), require("@catppuccin/tailwindcss")],
 } satisfies Config;
 
 export default config;
