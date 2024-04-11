@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/providers/theme/NextThemeProvider";
 import { DefaultPageHeader } from "@/components/DefaultPageHeader";
 import { CardDefault } from "@/components/CardDefault";
 import { ProfileResume } from "@/components/ProfileResume";
+import { ReactQueryProvider } from "@/providers/ReactQuery";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,7 +32,9 @@ export default function RootLayout({
 					defaultTheme="system"
 					enableSystem
 					disableTransitionOnChange>
-					<main className="mx-auto max-w-screen-xl">{children}</main>
+					<ReactQueryProvider>
+						<main className="mx-auto max-w-screen-xl">{children}</main>
+					</ReactQueryProvider>
 				</ThemeProvider>
 			</body>
 		</html>
