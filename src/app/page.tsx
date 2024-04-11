@@ -1,12 +1,8 @@
-import { CardDefault } from "@/components/CardDefault";
-import { ProfileResume } from "@/components/ProfileResume";
-import Image from "next/image";
+import { PATHS } from "@/constants/Path";
+import { redirect } from "next/navigation";
 
-export default function Home() {
-	return (
-		<main className="flex gap-4">
-			<ProfileResume />
-			<CardDefault className="h-[800px] flex-1" />
-		</main>
-	);
+interface HomeProps {}
+
+export default function Home({}: HomeProps) {
+	return redirect(PATHS.ABOUT_ME);
 }

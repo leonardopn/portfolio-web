@@ -7,7 +7,7 @@ interface ProfileResumeProps {}
 
 export function ProfileResume({}: ProfileResumeProps) {
 	return (
-		<div className="flex h-fit w-full max-w-96 flex-col gap-5">
+		<div className="hidden h-fit w-full max-w-96 flex-col gap-5 md:flex">
 			<CardDefault className="flex flex-col items-center">
 				<Image
 					src="/me.jpg"

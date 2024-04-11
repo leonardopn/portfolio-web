@@ -4,6 +4,8 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/providers/theme/NextThemeProvider";
 import { DefaultPageHeader } from "@/components/DefaultPageHeader";
+import { CardDefault } from "@/components/CardDefault";
+import { ProfileResume } from "@/components/ProfileResume";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,8 +31,15 @@ export default function RootLayout({
 					defaultTheme="system"
 					enableSystem
 					disableTransitionOnChange>
-					<DefaultPageHeader />
-					<main className="mx-auto my-5 max-w-screen-xl">{children}</main>
+					<main className="mx-auto max-w-screen-xl ">
+						<main className="flex gap-4">
+							<ProfileResume />
+							<section className="flex flex-1 flex-col gap-5">
+								<DefaultPageHeader />
+								<CardDefault className="h-[800px] flex-1">{children}</CardDefault>
+							</section>
+						</main>
+					</main>
 				</ThemeProvider>
 			</body>
 		</html>
