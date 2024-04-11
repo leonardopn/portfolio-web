@@ -31,15 +31,7 @@ export default function RootLayout({
 					defaultTheme="system"
 					enableSystem
 					disableTransitionOnChange>
-					<main className="mx-auto max-w-screen-xl ">
-						<main className="flex gap-4">
-							<ProfileResume />
-							<section className="flex flex-1 flex-col gap-5">
-								<DefaultPageHeader />
-								<CardDefault className="h-[800px] flex-1">{children}</CardDefault>
-							</section>
-						</main>
-					</main>
+					<main className="mx-auto max-w-screen-xl">{children}</main>
 				</ThemeProvider>
 			</body>
 		</html>
