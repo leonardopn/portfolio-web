@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/providers/theme/NextThemeProvider";
+import { DefaultPageHeader } from "@/components/DefaultPageHeader";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,12 +19,17 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="pt-BR">
-			<body className={cn("min-h-screen bg-base text-text dark:mocha", inter.className)}>
+			<body
+				className={cn(
+					"text-text ctp-latte min-h-screen bg-ctp-base !p-5 dark:ctp-mocha",
+					inter.className
+				)}>
 				<ThemeProvider
 					attribute="class"
 					defaultTheme="system"
 					enableSystem
 					disableTransitionOnChange>
+					<DefaultPageHeader />
 					{children}
 				</ThemeProvider>
 			</body>
