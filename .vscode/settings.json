@@ -1,3 +1,7 @@
 {
-	"conventionalCommits.scopes": ["Component: DefaultPageHeader", "Component: ProfileResume"]
+	"conventionalCommits.scopes": [
+		"Component: DefaultPageHeader",
+		"Component: ProfileResume",
+		"Component: PageTitle"
+	]
 }

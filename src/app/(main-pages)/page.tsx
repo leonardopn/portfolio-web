@@ -1,3 +1,3 @@
-export default function AboutMe() {
-	return <div className="">Sobre mim</div>;
+export default function About() {
+	return <div className="text-ctp-text"></div>;
 }
