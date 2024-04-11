@@ -30,7 +30,7 @@ export default function RootLayout({
 					enableSystem
 					disableTransitionOnChange>
 					<DefaultPageHeader />
-					{children}
+					<main className="mx-auto my-5 max-w-screen-xl">{children}</main>
 				</ThemeProvider>
 			</body>
 		</html>
