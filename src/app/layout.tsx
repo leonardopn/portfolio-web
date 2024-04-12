@@ -1,12 +1,10 @@
+import { GoToTopButton } from "@/components/GoToTopButton";
+import { cn } from "@/lib/utils";
+import { ReactQueryProvider } from "@/providers/ReactQuery";
+import { ThemeProvider } from "@/providers/theme/NextThemeProvider";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { cn } from "@/lib/utils";
-import { ThemeProvider } from "@/providers/theme/NextThemeProvider";
-import { DefaultPageHeader } from "@/components/DefaultPageHeader";
-import { CardDefault } from "@/components/CardDefault";
-import { ProfileResume } from "@/components/ProfileResume";
-import { ReactQueryProvider } from "@/providers/ReactQuery";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -34,6 +32,7 @@ export default function RootLayout({
 					disableTransitionOnChange>
 					<ReactQueryProvider>
 						<main className="mx-auto max-w-screen-xl">{children}</main>
+						<GoToTopButton />
 					</ReactQueryProvider>
 				</ThemeProvider>
 			</body>

@@ -3,6 +3,7 @@
 		"Component: DefaultPageHeader",
 		"Component: ProfileResume",
 		"Component: PageTitle",
-		"Component: TechnologyTag"
+		"Component: TechnologyTag",
+		"Component: GoToTopButton"
 	]
 }
