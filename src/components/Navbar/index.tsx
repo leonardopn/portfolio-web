@@ -6,7 +6,7 @@ interface NavbarProps {}
 
 export function Navbar({}: NavbarProps) {
 	return (
-		<CardDefault className="flex gap-2 overflow-hidden rounded-none rounded-br-lg p-0 sm:rounded-lg sm:p-1">
+		<CardDefault className="flex overflow-hidden rounded-none rounded-r-lg p-0 sm:rounded-lg sm:p-1 md:gap-2">
 			<NavItem href={PATHS.ABOUT} label="Sobre mim" />
 			<NavItem href={PATHS.PROJECTS} label="Projetos" />
 			<NavItem href={PATHS.BLOG} label="Blog" />

@@ -5,9 +5,9 @@ import { Button } from "../ui/button";
 
 export function DefaultPageHeader() {
 	return (
-		<header className="flex justify-between gap-5 ">
+		<header className="fixed z-10 flex h-fit w-full justify-between gap-5 border-b border-ctp-surface0 bg-ctp-base py-2 sm:relative sm:border-none sm:py-0">
 			<Navbar />
-			<ThemeModeToggle className="h-full w-12 rounded-none rounded-bl-lg sm:rounded-lg" />
+			<ThemeModeToggle className="w-12 rounded-none rounded-l-lg sm:rounded-lg" />
 		</header>
 	);
 }
