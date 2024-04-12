@@ -2,13 +2,22 @@ import Image from "next/image";
 import { CardDefault } from "../CardDefault";
 import { ProfileBasicInformation } from "../ProfileBasicInformation";
 import { SocialMediaButton } from "../SocialMediaButton";
+import { cn } from "@/lib/utils";
 
-interface ProfileResumeProps {}
+interface ProfileResumeProps {
+	className?: string;
+	photoContainerClassName?: string;
+	basicInformationContainerClassName?: string;
+}
 
-export function ProfileResume({}: ProfileResumeProps) {
+export function ProfileResume({
+	className,
+	photoContainerClassName,
+	basicInformationContainerClassName,
+}: ProfileResumeProps) {
 	return (
-		<div className="sticky top-5 hidden h-fit w-full max-w-96 flex-col gap-5 lg:flex">
-			<CardDefault className="flex flex-col items-center">
+		<div className={cn("sticky top-5 flex h-fit w-full max-w-96 flex-col gap-5", className)}>
+			<CardDefault className={cn("flex flex-col items-center", photoContainerClassName)}>
 				<Image
 					src="/me.jpg"
 					alt="me"
@@ -31,7 +40,7 @@ export function ProfileResume({}: ProfileResumeProps) {
 				</section>
 			</CardDefault>
 
-			<CardDefault className="flex flex-col gap-2">
+			<CardDefault className={cn("flex flex-col gap-2", basicInformationContainerClassName)}>
 				<ProfileBasicInformation
 					icon="Mail"
 					title="Email"

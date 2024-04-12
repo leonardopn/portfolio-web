@@ -5,6 +5,7 @@
 		"Component: PageTitle",
 		"Component: TechnologyTag",
 		"Component: GoToTopButton",
-		"Component: Navbar"
+		"Component: Navbar",
+		"Component: ProfileResumeHidded"
 	]
 }
