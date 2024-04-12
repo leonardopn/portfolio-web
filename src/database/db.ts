@@ -1,4 +1,5 @@
 import { ProgrammingLanguages } from "@/@types/ProgrammingLanguages";
+import { Technologies } from "@/@types/Technologies";
 
 export type Project = {
 	id: number;
@@ -7,6 +8,7 @@ export type Project = {
 	description: string;
 	link: string;
 	languages: ProgrammingLanguages[];
+	technologies: Technologies[];
 	license: string;
 };
 
@@ -20,6 +22,7 @@ export const projects: Project[] = [
 		link: "https://github.com/leonardopn/toolkit-extra",
 		languages: ["Typescript"],
 		license: "MIT",
+		technologies: ["Node", "NPM"],
 	},
 	{
 		id: 2,
@@ -30,6 +33,7 @@ export const projects: Project[] = [
 		link: "https://github.com/leonardopn/eslint-config-leonardopn",
 		languages: ["Javascript"],
 		license: "MIT",
+		technologies: ["Node", "NPM"],
 	},
 	{
 		id: 4,
@@ -40,6 +44,7 @@ export const projects: Project[] = [
 		link: "https://github.com/CC-UNIP-CAMPINAS/SAPEP-front",
 		languages: ["Javascript"],
 		license: "MIT",
+		technologies: ["React", "MySQL", "Node"],
 	},
 	{
 		id: 3,
@@ -50,6 +55,28 @@ export const projects: Project[] = [
 		link: "https://github.com/leonardopn/MQTT.JS-Auto-Exec",
 		languages: ["Javascript"],
 		license: "GPLv3",
+		technologies: ["React", "Electron"],
+	},
+	{
+		id: 8,
+		name: "Mimir - WEB",
+		resume: "Tenha sua estante de livros online para organizar sempre que quiser.",
+		description:
+			"O projeto é um app web que se conecta ao BaaS Firebase para você criar uma biblioteca/estante virtual de livros. Ainda está em desenvolvimento.",
+		link: "https://github.com/leonardopn/mimir-web",
+		languages: ["Typescript"],
+		license: "Sem licença",
+		technologies: ["Next", "Firebase", "React"],
+	},
+	{
+		id: 9,
+		name: "Mimir - Mobile",
+		resume: "Tenha sua estante de livros online para organizar sempre que quiser.",
+		description: "Vertente mobile do app Mimir. Também em desenvolvimento.",
+		link: "https://github.com/leonardopn/mimir",
+		languages: ["Typescript"],
+		license: "Sem licença",
+		technologies: ["React Native", "Firebase", "Expo"],
 	},
 	{
 		id: 6,
@@ -60,6 +87,7 @@ export const projects: Project[] = [
 		link: "https://github.com/CC-UNIP-CAMPINAS/jojochat_client",
 		languages: ["Java"],
 		license: "Sem licença",
+		technologies: ["JavaFX", "MySQL"],
 	},
 	{
 		id: 5,
@@ -70,6 +98,7 @@ export const projects: Project[] = [
 		link: "https://github.com/leonardopn/JEF",
 		languages: ["Java"],
 		license: "GPLv2.1",
+		technologies: ["JavaFX", "MySQL"],
 	},
 	{
 		id: 7,
@@ -80,5 +109,6 @@ export const projects: Project[] = [
 		link: "https://github.com/CC-UNIP-CAMPINAS/projetoPI_javafx",
 		languages: ["Java"],
 		license: "Sem licença",
+		technologies: ["JavaFX"],
 	},
 ];

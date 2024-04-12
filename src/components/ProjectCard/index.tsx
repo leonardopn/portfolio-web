@@ -1,7 +1,7 @@
 import { Project } from "@/database/db";
 import { ExternalLink, Scale } from "lucide-react";
 import { CardDefault } from "../CardDefault";
-import { LanguageTag } from "../LanguageTag";
+import { TechnologyTag } from "../TechnologyTag";
 
 interface ProjectCardProps {
 	project: Project;
@@ -25,10 +25,11 @@ export function ProjectCard({ project }: ProjectCardProps) {
 				<section className="rounded-lg border-ctp-surface0 text-sm sm:border sm:bg-ctp-crust sm:p-2 sm:text-base  sm:shadow-inner">
 					<p>{project.description}</p>
 				</section>
+
 				<footer className="flex items-center justify-between gap-2">
 					<section className="flex flex-wrap gap-2">
-						{project.languages.map(language => (
-							<LanguageTag key={language} language={language} />
+						{[...project.languages, ...project.technologies].map(language => (
+							<TechnologyTag key={language} languageOrTechnology={language} />
 						))}
 					</section>
 					<section className="flex h-fit w-fit items-center justify-center gap-2 text-sm font-semibold text-ctp-peach">

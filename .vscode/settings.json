@@ -2,6 +2,7 @@
 	"conventionalCommits.scopes": [
 		"Component: DefaultPageHeader",
 		"Component: ProfileResume",
-		"Component: PageTitle"
+		"Component: PageTitle",
+		"Component: TechnologyTag"
 	]
 }
