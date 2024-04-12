@@ -1,3 +1,9 @@
+import { ProjectsList } from "@/components/ProjectsList";
+
 export default function BlogPage() {
-	return <div className="">Projetos</div>;
+	return (
+		<div className="">
+			<ProjectsList />
+		</div>
+	);
 }

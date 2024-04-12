@@ -24,7 +24,7 @@ export default function RootLayout({
 		<html lang="pt-BR">
 			<body
 				className={cn(
-					"text-text ctp-latte min-h-screen bg-ctp-base !p-5 dark:ctp-mocha",
+					"text-text ctp-latte min-h-screen bg-ctp-base dark:ctp-mocha sm:!p-5",
 					inter.className
 				)}>
 				<ThemeProvider

@@ -9,7 +9,7 @@ export function CardDefault({ children, className }: CardDefaultProps) {
 	return (
 		<div
 			className={cn(
-				"rounded-lg border border-ctp-surface0 bg-ctp-crust p-5 dark:shadow-md ",
+				"rounded-lg border border-ctp-surface0 bg-ctp-crust p-5 shadow-inner dark:shadow-md ",
 				className
 			)}>
 			{children}

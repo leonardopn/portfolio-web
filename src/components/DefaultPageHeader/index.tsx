@@ -5,9 +5,9 @@ import { Button } from "../ui/button";
 
 export function DefaultPageHeader() {
 	return (
-		<header className="flex justify-between gap-5">
+		<header className="flex justify-between gap-5 ">
 			<Navbar />
-			<ThemeModeToggle className="h-full w-12" />
+			<ThemeModeToggle className="h-full w-12 rounded-none rounded-bl-lg sm:rounded-lg" />
 		</header>
 	);
 }
