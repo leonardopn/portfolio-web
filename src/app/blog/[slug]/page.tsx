@@ -1,4 +1,5 @@
 import { CodeBlock } from "@/components/CodeBlock";
+import { Divider } from "@/components/Divider";
 import { PostAuthorSection } from "@/components/PostAuthorSection";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
@@ -45,14 +46,13 @@ export default async function BlogPost({ params }: { params: Params }) {
 					{asText(post.data.subtitle)}
 				</h2>
 			</section>
-
 			<PrismicNextImage field={post.data.banner} />
 			<PostAuthorSection
 				timeToRead={timeToRead}
 				createdAt={post.first_publication_date}
 				updatedAt={post.last_publication_date}
 			/>
-
+			<Divider />
 			<main className="flex flex-col gap-4 px-3">
 				{post.data.content.map((content, index) => {
 					return (
@@ -67,7 +67,7 @@ export default async function BlogPost({ params }: { params: Params }) {
 					);
 				})}
 			</main>
-			<hr className="mx-3" />
+			<Divider />
 			<footer className="flex flex-wrap gap-2 px-3">
 				{post.tags.map(tag => {
 					return (
