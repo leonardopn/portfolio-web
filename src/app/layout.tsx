@@ -1,6 +1,5 @@
 import { GoToTopButton } from "@/components/GoToTopButton";
 import { cn } from "@/lib/utils";
-import { ReactQueryProvider } from "@/providers/ReactQuery";
 import { ThemeProvider } from "@/providers/theme/NextThemeProvider";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -30,10 +29,8 @@ export default function RootLayout({
 					defaultTheme="system"
 					enableSystem
 					disableTransitionOnChange>
-					<ReactQueryProvider>
-						<main className="mx-auto max-w-screen-xl">{children}</main>
-						<GoToTopButton />
-					</ReactQueryProvider>
+					<main className="mx-auto max-w-screen-xl">{children}</main>
+					<GoToTopButton />
 				</ThemeProvider>
 			</body>
 		</html>
