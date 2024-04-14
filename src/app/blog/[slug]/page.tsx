@@ -3,6 +3,7 @@ import { PostAuthorSection } from "@/components/PostAuthorSection";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import { createClient } from "@/prismicio";
+import { getTimeToReadPost } from "@/utils/Post";
 import { asText } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import { JSXMapSerializer, PrismicRichText } from "@prismicio/react";
@@ -28,6 +29,14 @@ export default async function BlogPost({ params }: { params: Params }) {
 		},
 	};
 
+	const stringContent = post.data.content
+		.map(content => {
+			return asText(content.body);
+		})
+		.join(" ");
+
+	const timeToRead = getTimeToReadPost(stringContent);
+
 	return (
 		<main className="flex flex-col gap-4">
 			<section>
@@ -38,7 +47,11 @@ export default async function BlogPost({ params }: { params: Params }) {
 			</section>
 
 			<PrismicNextImage field={post.data.banner} />
-			<PostAuthorSection />
+			<PostAuthorSection
+				timeToRead={timeToRead}
+				createdAt={post.first_publication_date}
+				updatedAt={post.last_publication_date}
+			/>
 
 			<main className="flex flex-col gap-4 px-3">
 				{post.data.content.map((content, index) => {

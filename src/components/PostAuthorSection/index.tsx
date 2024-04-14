@@ -1,8 +1,16 @@
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
+import dayjs from "@utils/Dayjs";
 
-interface PostAuthorSectionProps {}
+interface PostAuthorSectionProps {
+	timeToRead: number;
+	createdAt: string;
+	updatedAt?: string;
+}
 
-export function PostAuthorSection({}: PostAuthorSectionProps) {
+export function PostAuthorSection({ timeToRead, createdAt, updatedAt }: PostAuthorSectionProps) {
+	const formattedCreatedAt = dayjs(createdAt).format("MMM D, YYYY");
+	const formattedUpdatedAt = updatedAt ? dayjs(updatedAt).format("MMM D, YYYY") : "";
+
 	return (
 		<section className="flex flex-col  px-3">
 			<div className="flex gap-2 ">
@@ -12,7 +20,10 @@ export function PostAuthorSection({}: PostAuthorSectionProps) {
 				</Avatar>
 				<div>
 					<p>Leonardo Petta do Nascimento</p>
-					<p className="text-sm text-ctp-overlay0">3 min de leitura · Abr 13, 2024</p>
+					<p className="text-sm text-ctp-overlay0">
+						{timeToRead} min. de leitura · Criado em {formattedCreatedAt}{" "}
+						{formattedUpdatedAt && ` · Atualizado em ${formattedUpdatedAt}`}
+					</p>
 				</div>
 			</div>
 
