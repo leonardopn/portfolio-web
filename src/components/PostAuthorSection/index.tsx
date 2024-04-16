@@ -8,8 +8,8 @@ interface PostAuthorSectionProps {
 }
 
 export function PostAuthorSection({ timeToRead, createdAt, updatedAt }: PostAuthorSectionProps) {
-	const formattedCreatedAt = dayjs(createdAt).format("MMM D, YYYY");
-	const formattedUpdatedAt = updatedAt ? dayjs(updatedAt).format("MMM D, YYYY") : "";
+	const formattedCreatedAt = dayjs(createdAt).format("DD MMM, YYYY");
+	const formattedUpdatedAt = updatedAt ? dayjs(updatedAt).format("DD MMM, YYYY") : "";
 
 	return (
 		<section className="mx-3 flex items-center gap-2">

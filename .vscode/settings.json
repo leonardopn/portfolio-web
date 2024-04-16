@@ -9,6 +9,7 @@
 		"Component: ProfileResumeHidded",
 		"Page: BlogPost",
 		"Component: Divider",
-		"Component: PostIndex"
+		"Component: PostIndex",
+		"Component: Logo"
 	]
 }

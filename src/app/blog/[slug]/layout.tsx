@@ -1,4 +1,5 @@
 import { CardDefault } from "@/components/CardDefault";
+import { Logo } from "@/components/Logo";
 import { PostIndex } from "@/components/PostIndex";
 import { ThemeModeToggle } from "@/components/ThemeModeToggle";
 import {
@@ -53,6 +54,7 @@ export default async function BlogPostLayout({ children, params }: BlogPostLayou
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
 			/>
+			<Logo className="mt-5 block text-center lg:hidden lg:text-left" />
 			<header className="flex flex-col gap-2 p-2 pb-4">
 				<section className="flex justify-between">
 					<Link

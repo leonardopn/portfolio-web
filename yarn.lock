@@ -5618,6 +5618,7 @@ __metadata:
     react-dom: "npm:^18"
     react-html-parser: "npm:^2.0.2"
     react-icons: "npm:^5.0.1"
+    react-type-animation: "npm:^3.2.0"
     react-use: "npm:^17.5.0"
     schema-dts: "npm:^1.1.2"
     slice-machine-ui: "npm:^1.26.0"
@@ -6033,6 +6034,17 @@ __metadata:
     "@types/react":
       optional: true
   checksum: 10c0/6d66f3bdb65e1ec79089f80314da97c9a005087a04ee034255a5de129a4c0d9fd0bf99fa7bf642781ac2dc745ca687aae3de082bd8afdd0d117bc953241e15ad
+  languageName: node
+  linkType: hard
+
+"react-type-animation@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "react-type-animation@npm:3.2.0"
+  peerDependencies:
+    prop-types: ^15.5.4
+    react: ">= 15.0.0"
+    react-dom: ">= 15.0.0"
+  checksum: 10c0/bb8c114d9b3c81c4babe4b88ebb8b31c1e0fd7ffb39e5dce12ad20728717d3f9ba2e190e987790dc1ee95f869a909e03fd6551f1e548254e947b841c9c5ee619
   languageName: node
   linkType: hard
 
