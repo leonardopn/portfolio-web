@@ -60,7 +60,11 @@ export default async function BlogPost({ params }: { params: Params }) {
 							key={asText(content.heading) + `_${index}`}
 							className="flex flex-col gap-2">
 							{!!asText(content.heading) && (
-								<h2 className="text-xl font-bold">{asText(content.heading)}</h2>
+								<h2
+									className="text-xl font-bold"
+									id={`heading-${asText(content.heading)}`}>
+									{asText(content.heading)}
+								</h2>
 							)}
 							<PrismicRichText field={content.body} components={components} />
 						</section>

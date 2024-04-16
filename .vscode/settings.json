@@ -8,6 +8,7 @@
 		"Component: Navbar",
 		"Component: ProfileResumeHidded",
 		"Page: BlogPost",
-		"Component: Divider"
+		"Component: Divider",
+		"Component: PostIndex"
 	]
 }

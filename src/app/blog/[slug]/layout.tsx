@@ -1,4 +1,5 @@
 import { CardDefault } from "@/components/CardDefault";
+import { PostIndex } from "@/components/PostIndex";
 import { ThemeModeToggle } from "@/components/ThemeModeToggle";
 import {
 	Breadcrumb,
@@ -40,6 +41,12 @@ export default async function BlogPostLayout({ children, params }: BlogPostLayou
 		url: `${process.env.SITE_DOMAIN}${PATHS.BLOG}/${params.slug}`,
 	};
 
+	const headers = article.data.content
+		.map(content => {
+			return asText(content.heading);
+		})
+		.filter(Boolean);
+
 	return (
 		<section className="text-ctp-text">
 			<script
@@ -73,9 +80,12 @@ export default async function BlogPostLayout({ children, params }: BlogPostLayou
 					</Breadcrumb>
 				</section>
 			</header>
-			<CardDefault className="flex flex-1 flex-col gap-5 rounded-none border-l-0 border-r-0 px-0 py-3 sm:rounded-lg sm:border-l sm:border-r">
-				{children}
-			</CardDefault>
+			<main className="grid  grid-cols-1 gap-2 lg:grid-cols-3">
+				<CardDefault className="flex flex-col gap-5 rounded-none border-l-0 border-r-0 px-0 py-3 sm:rounded-lg sm:border-l sm:border-r lg:col-span-2">
+					{children}
+				</CardDefault>
+				<PostIndex headers={headers} />
+			</main>
 		</section>
 	);
 }
