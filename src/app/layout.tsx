@@ -2,10 +2,11 @@ import { GoToTopButton } from "@/components/GoToTopButton";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/providers/theme/NextThemeProvider";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
+import { Logo } from "@/components/Logo";
+import { JetBrains_Mono } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const fontDefault = JetBrains_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
 	title: "Create Next App",
@@ -22,7 +23,7 @@ export default function RootLayout({
 			<body
 				className={cn(
 					"text-text ctp-latte min-h-screen bg-ctp-base dark:ctp-mocha sm:!p-5",
-					inter.className
+					fontDefault.className
 				)}>
 				<ThemeProvider
 					attribute="class"
