@@ -3,7 +3,7 @@ import { Divider } from "@/components/Divider";
 import { PostAuthorSection } from "@/components/PostAuthorSection";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
-import { createClient } from "@/prismicio";
+import { prismicClient } from "@/prismicio";
 import { getTimeToReadPost } from "@/utils/Post";
 import { asText } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
@@ -16,7 +16,7 @@ const sourceSerif4 = Source_Serif_4({ subsets: ["latin"] });
 type Params = { slug: string };
 
 export default async function BlogPost({ params }: { params: Params }) {
-	const client = createClient();
+	const client = prismicClient();
 	const post = await client.getByUID("blog_post_default", params.slug).catch(e => {
 		notFound();
 	});
@@ -86,7 +86,7 @@ export default async function BlogPost({ params }: { params: Params }) {
 }
 
 export async function generateStaticParams() {
-	const client = createClient();
+	const client = prismicClient();
 	const pages = await client.getAllByType("blog_post_default");
 
 	return pages.map(page => {

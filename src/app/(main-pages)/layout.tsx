@@ -2,7 +2,7 @@ import { CardDefault } from "@/components/CardDefault";
 import { DefaultPageHeader } from "@/components/DefaultPageHeader";
 import { PageTitle } from "@/components/PageTitle";
 import { ProfileResume } from "@/components/ProfileResume";
-import { ProfileResumeHided } from "@/components/ProfileResumeHidded";
+import { ProfileResumeHided } from "@/components/ProfileResumeHided";
 
 interface MainPagesLayoutProps {
 	children: React.ReactNode;

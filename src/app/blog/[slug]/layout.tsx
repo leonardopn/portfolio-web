@@ -11,7 +11,7 @@ import {
 	BreadcrumbPage,
 } from "@/components/ui/breadcrumb";
 import { PATHS } from "@/constants/Path";
-import { createClient } from "@/prismicio";
+import { prismicClient } from "@/prismicio";
 import { asImageSrc, asText } from "@prismicio/client";
 import { CircleChevronLeft } from "lucide-react";
 import Link from "next/link";
@@ -24,7 +24,7 @@ interface BlogPostLayoutProps {
 }
 
 export default async function BlogPostLayout({ children, params }: BlogPostLayoutProps) {
-	const client = createClient();
+	const client = prismicClient();
 	const article = await client.getByUID("blog_post_default", params.slug).catch(() => notFound());
 
 	const jsonLd: WithContext<Article> = {

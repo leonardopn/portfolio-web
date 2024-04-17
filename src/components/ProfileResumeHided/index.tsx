@@ -2,7 +2,6 @@
 
 import { usePathname } from "next/navigation";
 import { ProfileResume } from "../ProfileResume";
-import { PATHS } from "@/constants/Path";
 
 interface ProfileResumeHidedProps {}
 
