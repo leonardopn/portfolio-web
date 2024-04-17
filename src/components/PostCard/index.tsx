@@ -23,17 +23,19 @@ export function PostCard({ post }: PostCardProps) {
 	const timeToRead = getTimeToReadPost(stringContent);
 
 	return (
-		<CardDefault className="flex flex-col gap-2 bg-ctp-base">
-			<header className="flex flex-wrap gap-2">
-				{post.tags.map(tag => {
-					return (
-						<Badge key={tag} className="cursor-pointer">
-							{tag}
-						</Badge>
-					);
-				})}
-			</header>
-			<Link href={`/blog/${post.uid}`} className="flex flex-col gap-2">
+		<CardDefault className="flex flex-col gap-2 bg-ctp-base transition-transform hover:scale-[101%]">
+			{!!post.tags.length && (
+				<header className="flex flex-wrap gap-2">
+					{post.tags.map(tag => {
+						return (
+							<Badge key={tag} className="cursor-pointer">
+								{tag}
+							</Badge>
+						);
+					})}
+				</header>
+			)}
+			<Link href={`/blog/${post.uid}`} className="flex flex-col gap-2 ">
 				<main>
 					<h1 className="text-lg text-ctp-peach">{asText(post.data.title)}</h1>
 					<h2 className="text-base text-ctp-overlay1">{asText(post.data.subtitle)}</h2>
