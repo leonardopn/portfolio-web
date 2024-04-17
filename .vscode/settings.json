@@ -12,6 +12,7 @@
 		"Component: PostIndex",
 		"Component: Logo",
 		"Page: Blog",
-		"Component: PostCard"
+		"Component: PostCard",
+		"Component: EmptyAreaMessage"
 	]
 }
