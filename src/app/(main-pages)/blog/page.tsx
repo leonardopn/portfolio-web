@@ -8,15 +8,14 @@ export default async function BlogPage() {
 
 	return (
 		<div className="flex h-full flex-col justify-between gap-5 text-ctp-text">
-			<main>
+			<header>
+				<p className="text-right text-sm">{posts.length} postagem(s)</p>
+			</header>
+			<main className="flex flex-col gap-5">
 				{posts.map(post => {
 					return <PostCard key={post.uid} post={post} />;
 				})}
 			</main>
-
-			<footer>
-				<p className="text-right text-sm">{posts.length} postagem(s)</p>
-			</footer>
 		</div>
 	);
 }
