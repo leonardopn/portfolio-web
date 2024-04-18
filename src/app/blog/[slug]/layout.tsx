@@ -111,8 +111,24 @@ export async function generateMetadata({
 	const client = prismicClient();
 	const article = await client.getByUID("blog_post_default", params.slug).catch(() => notFound());
 
+	const description = asText(article.data.subtitle);
+	const title = asText(article.data.title);
+	const bannerUrl = asImageSrc(article.data.banner) || "";
+
 	return {
-		title: asText(article.data.title).concat(" | Blog"),
-		description: asText(article.data.subtitle),
+		title,
+		description,
+		twitter: {
+			images: [bannerUrl],
+			card: "summary",
+			title,
+			description,
+		},
+		openGraph: {
+			images: [bannerUrl],
+
+			title,
+			description,
+		},
 	};
 }

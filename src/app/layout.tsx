@@ -1,13 +1,12 @@
 import { GoToTopButton } from "@/components/GoToTopButton";
+import { Logo } from "@/components/Logo";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/providers/theme/NextThemeProvider";
-import type { Metadata } from "next";
-import "./globals.css";
-import { Logo } from "@/components/Logo";
-import { JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Twitter } from "next/dist/lib/metadata/types/twitter-types";
+import type { Metadata } from "next";
+import { JetBrains_Mono } from "next/font/google";
+import "./globals.css";
 
 const fontDefault = JetBrains_Mono({ subsets: ["latin"] });
 
