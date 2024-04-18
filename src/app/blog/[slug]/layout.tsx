@@ -14,6 +14,7 @@ import { PATHS } from "@/constants/Path";
 import { prismicClient } from "@/prismicio";
 import { asImageSrc, asText } from "@prismicio/client";
 import { CircleChevronLeft } from "lucide-react";
+import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Article, WithContext } from "schema-dts";
@@ -31,6 +32,7 @@ export default async function BlogPostLayout({ children, params }: BlogPostLayou
 		"@context": "https://schema.org",
 		"@type": "Article",
 		headline: asText(article.data.title),
+		description: asText(article.data.subtitle),
 		author: {
 			"@type": "Person",
 			name: asText(article.data.author),
@@ -90,4 +92,27 @@ export default async function BlogPostLayout({ children, params }: BlogPostLayou
 			</main>
 		</section>
 	);
+}
+
+export async function generateStaticParams() {
+	const client = prismicClient();
+	const pages = await client.getAllByType("blog_post_default");
+
+	return pages.map(page => {
+		return { slug: page.uid };
+	});
+}
+
+export async function generateMetadata({
+	params,
+}: {
+	params: { slug: string };
+}): Promise<Metadata> {
+	const client = prismicClient();
+	const article = await client.getByUID("blog_post_default", params.slug).catch(() => notFound());
+
+	return {
+		title: asText(article.data.title).concat(" | Blog"),
+		description: asText(article.data.subtitle),
+	};
 }

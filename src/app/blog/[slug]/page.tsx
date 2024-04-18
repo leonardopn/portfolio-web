@@ -84,12 +84,3 @@ export default async function BlogPost({ params }: { params: Params }) {
 		</main>
 	);
 }
-
-export async function generateStaticParams() {
-	const client = prismicClient();
-	const pages = await client.getAllByType("blog_post_default");
-
-	return pages.map(page => {
-		return { slug: page.uid };
-	});
-}
