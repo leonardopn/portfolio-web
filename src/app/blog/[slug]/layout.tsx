@@ -63,7 +63,7 @@ export default async function BlogPostLayout({ children, params }: BlogPostLayou
 					<Link
 						href={PATHS.BLOG}
 						className="flex items-center gap-1 transition-opacity hover:opacity-80">
-						<CircleChevronLeft /> Voltar
+						<CircleChevronLeft className="text-ctp-peach" /> Voltar
 					</Link>
 					<ThemeModeToggle />
 				</section>

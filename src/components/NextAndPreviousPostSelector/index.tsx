@@ -75,9 +75,9 @@ async function RelatedPost({ post, className, isNext = false, ...props }: Relate
 						<CardDefault
 							className={cn(cardDefaultClass({ isNext }), className)}
 							{...props}>
-							{!isNext && <CircleArrowLeft className="size-5" />}
+							{!isNext && <CircleArrowLeft className="size-5 text-ctp-peach" />}
 							<h1 className="text-xs">{isNext ? "Proximo" : "Anterior"}</h1>
-							{isNext && <CircleArrowRight className="size-5" />}
+							{isNext && <CircleArrowRight className="size-5 text-ctp-peach" />}
 						</CardDefault>
 					</TooltipTrigger>
 					<TooltipContent>
