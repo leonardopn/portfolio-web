@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import { ComponentProps } from "react";
 
-interface CardDefaultProps extends ComponentProps<"div"> {
+export interface CardDefaultProps extends ComponentProps<"div"> {
 	children?: React.ReactNode;
 }
 

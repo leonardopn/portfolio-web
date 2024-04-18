@@ -13,6 +13,7 @@
 		"Component: Logo",
 		"Page: Blog",
 		"Component: PostCard",
-		"Component: EmptyAreaMessage"
+		"Component: EmptyAreaMessage",
+		"Component: NextAndPreviousPostSelector"
 	]
 }

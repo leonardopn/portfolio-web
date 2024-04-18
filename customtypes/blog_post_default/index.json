@@ -74,6 +74,22 @@
 						}
 					}
 				}
+			},
+			"nextpost": {
+				"type": "Link",
+				"config": {
+					"label": "NextPost",
+					"select": "document",
+					"customtypes": ["blog_post_default"]
+				}
+			},
+			"previouspost": {
+				"type": "Link",
+				"config": {
+					"label": "PreviousPost",
+					"select": "document",
+					"customtypes": ["blog_post_default"]
+				}
 			}
 		}
 	}

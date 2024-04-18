@@ -1,5 +1,6 @@
 import { CardDefault } from "@/components/CardDefault";
 import { Logo } from "@/components/Logo";
+import { NextAndPreviousPostSelector } from "@/components/NextAndPreviousPostSelector";
 import { PostIndex } from "@/components/PostIndex";
 import { ThemeModeToggle } from "@/components/ThemeModeToggle";
 import {
@@ -84,11 +85,17 @@ export default async function BlogPostLayout({ children, params }: BlogPostLayou
 					</Breadcrumb>
 				</section>
 			</header>
-			<main className="grid  grid-cols-1 gap-2 lg:grid-cols-3">
+			<main className="grid grid-cols-1 gap-4 lg:grid-cols-3">
 				<CardDefault className="flex flex-col gap-5 rounded-none border-l-0 border-r-0 px-0 py-3 sm:rounded-lg sm:border-l sm:border-r lg:col-span-2">
 					{children}
 				</CardDefault>
-				<PostIndex headers={headers} />
+				<PostIndex headers={headers} post={article} />
+				<section className="col-start-1 lg:col-span-2">
+					<NextAndPreviousPostSelector
+						nextPost={article.data.nextpost}
+						previousPost={article.data.previouspost}
+					/>
+				</section>
 			</main>
 		</section>
 	);

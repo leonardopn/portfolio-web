@@ -87,6 +87,28 @@ interface BlogPostDefaultDocumentData {
 	 * - **Documentation**: https://prismic.io/docs/field#group
 	 */
 	content: prismic.GroupField<Simplify<BlogPostDefaultDocumentDataContentItem>>;
+
+	/**
+	 * NextPost field in *Blog Post*
+	 *
+	 * - **Field Type**: Content Relationship
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: blog_post_default.nextpost
+	 * - **Tab**: Post
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	nextpost: prismic.ContentRelationshipField<"blog_post_default">;
+
+	/**
+	 * PreviousPost field in *Blog Post*
+	 *
+	 * - **Field Type**: Content Relationship
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: blog_post_default.previouspost
+	 * - **Tab**: Post
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	previouspost: prismic.ContentRelationshipField<"blog_post_default">;
 }
 
 /**
