@@ -10,24 +10,25 @@ import "./globals.css";
 
 const fontDefault = JetBrains_Mono({ subsets: ["latin"] });
 
+const title = "Portfólio - Leonardo Petta";
+const description =
+	"Leonardo, desenvolvedor Fullstack, com formação em Ciência da Computação e pós-graduações em Cloud Computing e Desenvolvimento de Aplicativos Móveis. Experiência com Firebase, React, Next, MongoDB, Node, e Typescript. Descubra meus projetos, leia artigos e inspire-se!";
+
 export const metadata: Metadata = {
-	title: "Leonardo Petta - Portfólio",
+	title,
 	authors: [{ name: "Leonardo Petta do Nascimento", url: "https://github.com/leonardopn" }],
-	description:
-		"Descubra o mundo da programação com Leonardo Petta, um desenvolvedor apaixonado por compartilhar projetos inovadores e insights técnicos. Explore tutoriais detalhados, análises de tecnologias emergentes e uma jornada pessoal através do código.",
+	description,
 
 	twitter: {
 		images: ["/banner.webp"],
 		card: "summary",
-		title: "Leonardo Petta - Portfólio",
-		description:
-			"Descubra o mundo da programação com Leonardo Petta, um desenvolvedor apaixonado por compartilhar projetos inovadores e insights técnicos. Explore tutoriais detalhados, análises de tecnologias emergentes e uma jornada pessoal através do código.",
+		title,
+		description,
 	},
 	openGraph: {
 		images: ["/banner.webp"],
-		title: "Leonardo Petta - Portfólio",
-		description:
-			"Descubra o mundo da programação com Leonardo Petta, um desenvolvedor apaixonado por compartilhar projetos inovadores e insights técnicos. Explore tutoriais detalhados, análises de tecnologias emergentes e uma jornada pessoal através do código.",
+		title,
+		description,
 	},
 };
 
