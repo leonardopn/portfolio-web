@@ -18,14 +18,14 @@ export const metadata: Metadata = {
 		"Descubra o mundo da programação com Leonardo Petta, um desenvolvedor apaixonado por compartilhar projetos inovadores e insights técnicos. Explore tutoriais detalhados, análises de tecnologias emergentes e uma jornada pessoal através do código.",
 
 	twitter: {
-		images: ["/public/banner.webp"],
+		images: ["/banner.webp"],
 		card: "summary",
 		title: "Leonardo Petta - Portfólio",
 		description:
 			"Descubra o mundo da programação com Leonardo Petta, um desenvolvedor apaixonado por compartilhar projetos inovadores e insights técnicos. Explore tutoriais detalhados, análises de tecnologias emergentes e uma jornada pessoal através do código.",
 	},
 	openGraph: {
-		images: ["/public/banner.webp"],
+		images: ["/banner.webp"],
 		title: "Leonardo Petta - Portfólio",
 		description:
 			"Descubra o mundo da programação com Leonardo Petta, um desenvolvedor apaixonado por compartilhar projetos inovadores e insights técnicos. Explore tutoriais detalhados, análises de tecnologias emergentes e uma jornada pessoal através do código.",
