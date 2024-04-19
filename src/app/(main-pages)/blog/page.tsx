@@ -1,8 +1,10 @@
 import { EmptyAreaMessage } from "@/components/EmptyAreaMessage";
 import { PostCard } from "@/components/PostCard";
 import { prismicClient } from "@/prismicio";
-import { AllDocumentTypes } from "../../../../prismicio-types";
+import { asText } from "@prismicio/client";
 import { Metadata } from "next";
+import { AllDocumentTypes } from "../../../../prismicio-types";
+import { InputFilterSearchParams } from "../../../components/InputFilterSearchParams";
 
 const title = "Blog - Leonardo Petta";
 const description =
@@ -25,21 +27,40 @@ export const metadata: Metadata = {
 	},
 };
 
-export default async function BlogPage() {
+interface BlogPageProps {
+	searchParams: { filter?: string };
+}
+
+export default async function BlogPage({ searchParams }: BlogPageProps) {
 	const client = prismicClient();
 
 	const posts: AllDocumentTypes[] = await client.getAllByType("blog_post_default");
 
+	const filteredPosts = posts.filter(post => {
+		const filter = searchParams?.filter?.toLowerCase();
+		console.log(filter);
+
+		if (!filter) return true;
+
+		const title = asText(post.data.title).toLowerCase();
+		const description = asText(post.data.subtitle).toLowerCase();
+
+		return title.includes(filter) || description.includes(filter);
+	});
+
 	return (
 		<div className="flex h-full flex-col justify-between gap-5 text-ctp-text">
 			{!!posts.length && (
-				<header>
-					<p className="text-right text-sm">{posts.length} postagem(s)</p>
+				<header className="flex flex-col gap-5">
+					<p className="text-right text-sm">
+						{filteredPosts.length}/{posts.length} postagem(s)
+					</p>
+					<InputFilterSearchParams />
 				</header>
 			)}
-			{posts.length === 0 && <EmptyAreaMessage className="h-full" />}
+			{filteredPosts.length === 0 && <EmptyAreaMessage className="h-full min-h-96" />}
 			<main className="flex flex-col gap-5">
-				{posts.map(post => {
+				{filteredPosts.map(post => {
 					return <PostCard key={post.uid} post={post} />;
 				})}
 			</main>
