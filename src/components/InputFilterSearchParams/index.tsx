@@ -1,5 +1,6 @@
 "use client";
 import { Input } from "@/components/ui/input";
+import { debounce } from "lodash";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { ChangeEvent, useCallback } from "react";
 
@@ -24,12 +25,14 @@ export function InputFilterSearchParams() {
 		router.push(pathname + "?" + createQueryString("filter", e.target.value));
 	}
 
+	const debouncedHandleChangeFilterText = debounce(handleChangeFilterText, 800);
+
 	return (
 		<Input
 			placeholder="Busque uma postagem por título ou descrição"
 			type="text"
-			value={searchParams.get("filter") || ""}
-			onChange={handleChangeFilterText}
+			defaultValue={searchParams.get("filter") || ""}
+			onChange={debouncedHandleChangeFilterText}
 		/>
 	);
 }
