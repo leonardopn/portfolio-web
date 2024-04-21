@@ -1,5 +1,9 @@
 # portfolio-web
 
+<p align="center" style="background-color:#1e1e2c">
+    <img src="public/banner.webp" alt="repository logo"  width="500"/>
+</p>
+
 Meu site pessoal e blog feito com Next.js, React e Prismic como CMS.
 
 Aqui você vai encontrar todo o código que da vida ao meu site e blog.
