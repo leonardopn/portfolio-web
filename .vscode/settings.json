@@ -1,0 +1,21 @@
+{
+	"conventionalCommits.scopes": [
+		"Component: DefaultPageHeader",
+		"Component: ProfileResume",
+		"Component: PageTitle",
+		"Component: TechnologyTag",
+		"Component: GoToTopButton",
+		"Component: Navbar",
+		"Component: ProfileResumeHidded",
+		"Page: BlogPost",
+		"Component: Divider",
+		"Component: PostIndex",
+		"Component: Logo",
+		"Page: Blog",
+		"Component: PostCard",
+		"Component: EmptyAreaMessage",
+		"Component: NextAndPreviousPostSelector",
+		"Component: InputFilterSearchParams",
+		"Component: PostAuthorSection"
+	]
+}
