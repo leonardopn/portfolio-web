@@ -1,10 +1,5 @@
 import { icons, LucideProps } from "lucide-react";
 
-interface SocialMediaButtonProps {
-	icon: keyof typeof icons;
-	href: string;
-}
-
 interface LucidIconProps extends LucideProps {
 	icon: keyof typeof icons;
 }

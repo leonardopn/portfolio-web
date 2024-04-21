@@ -3,9 +3,7 @@
 import { usePathname } from "next/navigation";
 import { ProfileResume } from "../ProfileResume";
 
-interface ProfileResumeHidedProps {}
-
-export function ProfileResumeHided({}: ProfileResumeHidedProps) {
+export function ProfileResumeHided() {
 	const path = usePathname();
 
 	if (path !== "/") return null;

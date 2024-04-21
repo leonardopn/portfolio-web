@@ -70,7 +70,7 @@ async function RelatedPost({ post, className, isNext = false, ...props }: Relate
 	return (
 		<Link href={PATHS.BLOG_POST(post.uid)} className={linkClass({ isNext })}>
 			<TooltipProvider>
-				<Tooltip delayDuration={0} open={!!article ? undefined : false}>
+				<Tooltip delayDuration={0} open={article ? undefined : false}>
 					<TooltipTrigger asChild>
 						<CardDefault
 							className={cn(cardDefaultClass({ isNext }), className)}

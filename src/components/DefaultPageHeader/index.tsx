@@ -1,8 +1,6 @@
-import { CardDefault } from "../CardDefault";
 import { Logo } from "../Logo";
 import { Navbar } from "../Navbar";
 import { ThemeModeToggle } from "../ThemeModeToggle";
-import { Button } from "../ui/button";
 
 export function DefaultPageHeader() {
 	return (

@@ -1,9 +1,7 @@
 import { projects } from "@/database/db";
 import { ProjectCard } from "../ProjectCard";
 
-interface ProjectsListProps {}
-
-export function ProjectsList({}: ProjectsListProps) {
+export function ProjectsList() {
 	return (
 		<div className="flex flex-col gap-5">
 			{projects.map(repo => {

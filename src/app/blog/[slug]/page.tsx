@@ -17,7 +17,7 @@ type Params = { slug: string };
 
 export default async function BlogPost({ params }: { params: Params }) {
 	const client = prismicClient();
-	const post = await client.getByUID("blog_post_default", params.slug).catch(e => {
+	const post = await client.getByUID("blog_post_default", params.slug).catch(() => {
 		notFound();
 	});
 
