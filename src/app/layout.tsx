@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 	title,
 	authors: [{ name: "Leonardo Petta do Nascimento", url: "https://github.com/leonardopn" }],
 	description,
-
+	metadataBase: new URL(process.env.SITE_DOMAIN),
 	twitter: {
 		images: ["/banner.webp"],
 		card: "summary",
