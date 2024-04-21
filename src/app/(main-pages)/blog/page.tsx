@@ -38,7 +38,6 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
 
 	const filteredPosts = posts.filter(post => {
 		const filter = searchParams?.filter?.toLowerCase();
-		console.log(filter);
 
 		if (!filter) return true;
 
