@@ -15,6 +15,7 @@
 		"Component: PostCard",
 		"Component: EmptyAreaMessage",
 		"Component: NextAndPreviousPostSelector",
-		"Component: InputFilterSearchParams"
+		"Component: InputFilterSearchParams",
+		"Component: PostAuthorSection"
 	]
 }

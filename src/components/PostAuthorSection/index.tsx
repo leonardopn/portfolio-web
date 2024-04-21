@@ -10,6 +10,7 @@ interface PostAuthorSectionProps {
 export function PostAuthorSection({ timeToRead, createdAt, updatedAt }: PostAuthorSectionProps) {
 	const formattedCreatedAt = dayjs(createdAt).format("DD MMM, YYYY");
 	const formattedUpdatedAt = updatedAt ? dayjs(updatedAt).format("DD MMM, YYYY") : "";
+	const isUpdatedAtImportant = updatedAt && dayjs(createdAt).diff(dayjs(updatedAt), "day") > 0;
 
 	return (
 		<section className="mx-3 flex items-center gap-2">
@@ -21,7 +22,7 @@ export function PostAuthorSection({ timeToRead, createdAt, updatedAt }: PostAuth
 				<p>Leonardo Petta do Nascimento</p>
 				<p className="text-sm text-ctp-overlay0">
 					{timeToRead} min. de leitura · Criado em {formattedCreatedAt}{" "}
-					{formattedUpdatedAt && ` · Atualizado em ${formattedUpdatedAt}`}
+					{isUpdatedAtImportant && ` · Atualizado em ${formattedUpdatedAt}`}
 				</p>
 			</div>
 		</section>
