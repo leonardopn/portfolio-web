@@ -22,9 +22,6 @@ export default async function BlogPost({ params }: { params: Params }) {
 	});
 
 	const components: JSXMapSerializer = {
-		paragraph: ({ children }) => {
-			return <p className={cn(sourceSerif4.className, "text-lg font-light")}>{children}</p>;
-		},
 		preformatted: ({ node }) => {
 			return <CodeBlock code={node.text} />;
 		},
@@ -39,10 +36,10 @@ export default async function BlogPost({ params }: { params: Params }) {
 	const timeToRead = getTimeToReadPost(stringContent);
 
 	return (
-		<main className="flex flex-col gap-4">
+		<main className="post-container flex list-disc flex-col gap-4">
 			<section>
 				<h1 className="px-3 text-2xl font-bold">{asText(post.data.title)}</h1>
-				<h2 className="px-3 text-lg font-light text-ctp-overlay1">
+				<h2 className="px-3 text-base font-light text-ctp-overlay1">
 					{asText(post.data.subtitle)}
 				</h2>
 			</section>
@@ -66,7 +63,13 @@ export default async function BlogPost({ params }: { params: Params }) {
 									{asText(content.heading)}
 								</h2>
 							)}
-							<PrismicRichText field={content.body} components={components} />
+							<div
+								className={cn(
+									sourceSerif4.className,
+									"flex flex-col gap-2 text-lg font-light"
+								)}>
+								<PrismicRichText field={content.body} components={components} />
+							</div>
 						</section>
 					);
 				})}

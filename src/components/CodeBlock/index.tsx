@@ -7,7 +7,7 @@ interface CodeBlockProps {
 
 export function CodeBlock({ code }: CodeBlockProps) {
 	return (
-		<pre className="notranslate relative rounded-lg bg-ctp-base" translate="no">
+		<pre className="notranslate relative rounded-lg bg-ctp-base text-base" translate="no">
 			<header className="sticky top-0 flex items-center justify-between rounded-t-lg bg-ctp-base p-3">
 				<section className="flex gap-2">
 					<span className="block size-4 rounded-full bg-ctp-red" />

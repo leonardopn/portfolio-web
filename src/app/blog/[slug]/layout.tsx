@@ -19,6 +19,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Article, WithContext } from "schema-dts";
+import "./style.scss";
 
 interface BlogPostLayoutProps {
 	children: React.ReactNode;

@@ -1,0 +1,29 @@
+.post-container {
+	ul,
+	ol {
+		@apply mx-8 my-2;
+
+		::marker {
+			@apply font-medium text-ctp-peach;
+		}
+	}
+
+	ul {
+		@apply list-disc;
+	}
+
+	ol {
+		@apply list-decimal;
+		@apply mx-10;
+	}
+
+	a {
+		@apply underline;
+		@apply font-medium;
+	}
+
+	em,
+	strong {
+		@apply font-medium;
+	}
+}
