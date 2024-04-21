@@ -26,6 +26,17 @@ export const projects: Project[] = [
 	},
 	{
 		id: 2,
+		name: "portfolio-web",
+		resume: "Site pessoal e blog.",
+		description:
+			"Esse projeto é realmente o site que você está visitando atualmente. Nele adicionei dados sobre mim, links, projetos e implementei um blog consumindo dados de um CMS.",
+		link: "https://github.com/leonardopn/portfolio-web",
+		languages: ["Typescript"],
+		license: "MIT",
+		technologies: ["Next", "Prismic"],
+	},
+	{
+		id: 3,
 		name: "eslint-config-leonardopn",
 		resume: "Configurações padronizadas para o ESLint.",
 		description:
@@ -47,7 +58,7 @@ export const projects: Project[] = [
 		technologies: ["React", "MySQL", "Node"],
 	},
 	{
-		id: 3,
+		id: 5,
 		name: "MQTT.JS-Auto-Exec",
 		resume: "Programa para execução de comandos recebidos por protocolo MQTT.",
 		description:
@@ -58,7 +69,7 @@ export const projects: Project[] = [
 		technologies: ["React", "Electron"],
 	},
 	{
-		id: 8,
+		id: 6,
 		name: "Mimir - WEB",
 		resume: "Tenha sua estante de livros online para organizar sempre que quiser.",
 		description:
@@ -69,7 +80,7 @@ export const projects: Project[] = [
 		technologies: ["Next", "Firebase", "React"],
 	},
 	{
-		id: 9,
+		id: 7,
 		name: "Mimir - Mobile",
 		resume: "Tenha sua estante de livros online para organizar sempre que quiser.",
 		description: "Vertente mobile do app Mimir. Também em desenvolvimento.",
@@ -79,7 +90,7 @@ export const projects: Project[] = [
 		technologies: ["React Native", "Firebase", "Expo"],
 	},
 	{
-		id: 6,
+		id: 8,
 		name: "jojochat_client",
 		resume: "Jojochat - chat usando sockets.",
 		description:
@@ -90,7 +101,7 @@ export const projects: Project[] = [
 		technologies: ["JavaFX", "MySQL"],
 	},
 	{
-		id: 5,
+		id: 9,
 		name: "JEF",
 		resume: "Java Esmalteria Fiscal - gerencie seus horários marcados.",
 		description:
@@ -101,7 +112,7 @@ export const projects: Project[] = [
 		technologies: ["JavaFX", "MySQL"],
 	},
 	{
-		id: 7,
+		id: 10,
 		name: "projetoPI_javafx",
 		resume: "BinarizadorFX - Binariza uma imagem",
 		description:

@@ -16,6 +16,7 @@
 		"Component: EmptyAreaMessage",
 		"Component: NextAndPreviousPostSelector",
 		"Component: InputFilterSearchParams",
-		"Component: PostAuthorSection"
+		"Component: PostAuthorSection",
+		"Page: ProjectsPage"
 	]
 }
