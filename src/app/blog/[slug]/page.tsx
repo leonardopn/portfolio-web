@@ -43,7 +43,7 @@ export default async function BlogPost({ params }: { params: Params }) {
 					{asText(post.data.subtitle)}
 				</h2>
 			</section>
-			<PrismicNextImage field={post.data.banner} />
+			<PrismicNextImage field={post.data.banner} priority />
 			<PostAuthorSection
 				timeToRead={timeToRead}
 				createdAt={post.first_publication_date}

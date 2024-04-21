@@ -15,7 +15,7 @@ export function PostAuthorSection({ timeToRead, createdAt, updatedAt }: PostAuth
 	return (
 		<section className="mx-3 flex items-center gap-2">
 			<Avatar>
-				<AvatarImage src="/me.jpg" />
+				<AvatarImage src="/me.jpg" fetchPriority="high" />
 				<AvatarFallback>LP</AvatarFallback>
 			</Avatar>
 			<div>
