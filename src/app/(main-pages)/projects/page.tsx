@@ -22,6 +22,6 @@ export const metadata: Metadata = {
 	},
 };
 
-export default function BlogPage() {
+export default function ProjectsPage() {
 	return <ProjectsList />;
 }

@@ -9,4 +9,5 @@ export type Technologies =
 	| "Electron"
 	| "Firebase"
 	| "Expo"
-	| "React Native";
+	| "React Native"
+	| "Prismic";

@@ -13,7 +13,7 @@ import {
 } from "react-icons/bi";
 import { GrMysql } from "react-icons/gr";
 import { RiNpmjsFill } from "react-icons/ri";
-import { SiElectron, SiExpo, SiNextdotjs } from "react-icons/si";
+import { SiElectron, SiExpo, SiNextdotjs, SiPrismic } from "react-icons/si";
 
 export function TechnologyTag({
 	languageOrTechnology,
@@ -39,6 +39,7 @@ export function TechnologyTag({
 					Firebase: "!bg-orange-400",
 					"React Native": "!bg-cyan-400",
 					Expo: "!bg-slate-900",
+					Prismic: "!bg-[#314392]",
 				},
 			},
 		}
@@ -59,6 +60,7 @@ export function TechnologyTag({
 		Firebase: BiLogoFirebase,
 		"React Native": BiLogoReact,
 		Expo: SiExpo,
+		Prismic: SiPrismic,
 	};
 
 	const Icon = icons[languageOrTechnology];
