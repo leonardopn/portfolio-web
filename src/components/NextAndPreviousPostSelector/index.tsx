@@ -47,8 +47,8 @@ async function RelatedPost({ post, className, isNext = false, ...props }: Relate
 	const linkClass = cva("text-ctp-text", {
 		variants: {
 			isNext: {
-				true: "justify-self-end",
-				false: "justify-self-start",
+				true: "justify-self-end col-start-2",
+				false: "justify-self-start col-start-1",
 			},
 		},
 	});
