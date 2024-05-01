@@ -26,4 +26,11 @@
 	strong {
 		@apply font-medium;
 	}
+
+	.block-img {
+		@apply flex items-center justify-center;
+		img {
+			@apply rounded-lg;
+		}
+	}
 }
