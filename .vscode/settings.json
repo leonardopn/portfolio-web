@@ -17,6 +17,8 @@
 		"Component: NextAndPreviousPostSelector",
 		"Component: InputFilterSearchParams",
 		"Component: PostAuthorSection",
-		"Page: ProjectsPage"
+		"Page: ProjectsPage",
+		"Component: RelatedPost",
+		"Component: ImageZoom"
 	]
 }

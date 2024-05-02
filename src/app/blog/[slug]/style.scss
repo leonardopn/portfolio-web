@@ -18,12 +18,11 @@
 	}
 
 	a {
-		@apply underline;
-		@apply font-medium;
+		@apply font-medium text-ctp-peach underline;
 	}
 
 	em,
 	strong {
-		@apply font-medium;
+		@apply break-words font-medium;
 	}
 }

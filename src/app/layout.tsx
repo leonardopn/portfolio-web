@@ -56,8 +56,8 @@ export default function RootLayout({
 					</main>
 					<GoToTopButton />
 				</ThemeProvider>
+				<PrismicPreview repositoryName={process.env.PRISMIC_ENVIRONMENT} />
 			</body>
-			<PrismicPreview repositoryName={process.env.PRISMIC_ENVIRONMENT} />
 			<Analytics />
 			<SpeedInsights />
 		</html>
