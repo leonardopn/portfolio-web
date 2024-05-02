@@ -18,6 +18,7 @@
 		"Component: InputFilterSearchParams",
 		"Component: PostAuthorSection",
 		"Page: ProjectsPage",
-		"Component: RelatedPost"
+		"Component: RelatedPost",
+		"Component: ImageZoom"
 	]
 }

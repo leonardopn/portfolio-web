@@ -18,19 +18,11 @@
 	}
 
 	a {
-		@apply underline;
-		@apply font-medium;
+		@apply font-medium text-ctp-peach underline;
 	}
 
 	em,
 	strong {
-		@apply font-medium;
-	}
-
-	.block-img {
-		@apply flex items-center justify-center;
-		img {
-			@apply rounded-lg;
-		}
+		@apply break-words font-medium;
 	}
 }

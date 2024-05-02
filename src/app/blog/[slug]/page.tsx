@@ -1,5 +1,6 @@
 import { CodeBlock } from "@/components/CodeBlock";
 import { Divider } from "@/components/Divider";
+import { ImageZoom } from "@/components/ImageZoom";
 import { PostAuthorSection } from "@/components/PostAuthorSection";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
@@ -24,6 +25,20 @@ export default async function BlogPost({ params }: { params: Params }) {
 	const components: JSXMapSerializer = {
 		preformatted: ({ node }) => {
 			return <CodeBlock code={node.text} />;
+		},
+		image: ({ node }) => {
+			return (
+				<ImageZoom
+					image={{
+						src: node.url,
+						alt: node.alt || "",
+						width: node.dimensions.width,
+						height: node.dimensions.height,
+						unoptimized: true,
+						className: "self-center rounded-lg",
+					}}
+				/>
+			);
 		},
 	};
 
