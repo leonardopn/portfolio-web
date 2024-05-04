@@ -19,6 +19,7 @@
 		"Component: PostAuthorSection",
 		"Page: ProjectsPage",
 		"Component: RelatedPost",
-		"Component: ImageZoom"
+		"Component: ImageZoom",
+		"Component: PostIndexItem"
 	]
 }
