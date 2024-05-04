@@ -20,6 +20,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Article, WithContext } from "schema-dts";
 import "./style.scss";
+import { PostSectionObserverProvider } from "@/contexts/PostSectionObserverContext";
 
 interface BlogPostLayoutProps {
 	children: React.ReactNode;
@@ -86,18 +87,20 @@ export default async function BlogPostLayout({ children, params }: BlogPostLayou
 					</Breadcrumb>
 				</section>
 			</header>
-			<main className="grid grid-cols-1 gap-4 lg:grid-cols-3">
-				<CardDefault className="flex flex-col gap-5 rounded-none border-l-0 border-r-0 px-0 py-3 sm:rounded-lg sm:border-l sm:border-r lg:col-span-2">
-					{children}
-				</CardDefault>
-				<PostIndex headers={headers} post={article} />
-				<section className="col-start-1 lg:col-span-2">
-					<NextAndPreviousPostSelector
-						nextPost={article.data.nextpost}
-						previousPost={article.data.previouspost}
-					/>
-				</section>
-			</main>
+			<PostSectionObserverProvider>
+				<main className="grid grid-cols-1 gap-4 lg:grid-cols-3">
+					<CardDefault className="flex flex-col gap-5 rounded-none border-l-0 border-r-0 px-0 py-3 sm:rounded-lg sm:border-l sm:border-r lg:col-span-2">
+						{children}
+					</CardDefault>
+					<PostIndex headers={headers} post={article} />
+					<section className="col-start-1 lg:col-span-2">
+						<NextAndPreviousPostSelector
+							nextPost={article.data.nextpost}
+							previousPost={article.data.previouspost}
+						/>
+					</section>
+				</main>
+			</PostSectionObserverProvider>
 		</section>
 	);
 }

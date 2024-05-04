@@ -1,42 +1,42 @@
 "use client";
 
-import { useEffect } from "react";
+import { usePostSectionObserverContext } from "@/contexts/PostSectionObserverContext";
+import { cva } from "class-variance-authority";
+import { ChevronsRight } from "lucide-react";
 
 interface PostIndexItemProps {
 	text: string;
 }
 
 export function PostIndexItem({ text }: PostIndexItemProps) {
-	useEffect(() => {
-		const observer = new IntersectionObserver(
-			entries => {
-				entries.forEach(entry => {
-					if (text === "O que é um CMS?") {
-						if (entry.isIntersecting) {
-							console.log("is Intersecting");
-						} else {
-							console.log("not Intersecting");
-						}
-					}
-				});
+	const { currentPostSectionId } = usePostSectionObserverContext();
+	const headingId = `heading-${text}`;
+	const isIntersecting = currentPostSectionId === headingId;
+
+	const linkClass = cva("text-sm hover:underline flex items-center", {
+		variants: {
+			isIntersecting: {
+				true: "text-ctp-peach list-none",
 			},
-			{ rootMargin: "-50% 0px -50% 0px", threshold: 0.5 }
-		);
+		},
+	});
 
-		// Observar os elementos
-		const title = document.getElementById(`heading-${text}`);
-
-		if (title) observer.observe(title);
-
-		// Cleanup
-		return () => {
-			if (title) observer.unobserve(title);
-		};
-	}, [text]);
+	const liClass = cva("ml-5", {
+		variants: {
+			isIntersecting: {
+				true: "list-none ml-0",
+			},
+		},
+	});
 
 	return (
-		<li key={text}>
-			<a href={`#heading-${text}`} className="list-disc text-sm hover:underline">
+		<li key={text} className={liClass({ isIntersecting })}>
+			<a
+				href={`#heading-${text}`}
+				className={linkClass({
+					isIntersecting,
+				})}>
+				{isIntersecting && <ChevronsRight className="-ml-2 mr-1" />}
 				{text}
 			</a>
 		</li>

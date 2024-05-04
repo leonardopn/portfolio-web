@@ -67,16 +67,14 @@ export default async function BlogPost({ params }: { params: Params }) {
 			<Divider />
 			<main className="flex flex-col gap-4 px-3">
 				{post.data.content.map((content, index) => {
+					const hasHeading = !!asText(content.heading);
 					return (
 						<section
+							id={hasHeading ? `heading-${asText(content.heading)}` : undefined}
 							key={asText(content.heading) + `_${index}`}
-							className="flex flex-col gap-2">
-							{!!asText(content.heading) && (
-								<h2
-									className="text-xl font-bold"
-									id={`heading-${asText(content.heading)}`}>
-									{asText(content.heading)}
-								</h2>
+							className={`${hasHeading ? "heading-post" : ""} flex flex-col gap-2`}>
+							{hasHeading && (
+								<h2 className=" text-xl font-bold">{asText(content.heading)}</h2>
 							)}
 							<div
 								className={cn(
