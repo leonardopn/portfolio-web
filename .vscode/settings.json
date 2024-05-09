@@ -21,6 +21,7 @@
 		"Component: RelatedPost",
 		"Component: ImageZoom",
 		"Component: PostIndexItem",
-		"Component: SocialMediaShareBar"
+		"Component: SocialMediaShareBar",
+		"Component: ThemeModeToggle"
 	]
 }
