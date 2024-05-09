@@ -13,7 +13,7 @@ export function PostIndexItem({ text }: PostIndexItemProps) {
 	const headingId = `heading-${text}`;
 	const isIntersecting = currentPostSectionId === headingId;
 
-	const linkClass = cva("text-sm hover:underline flex items-center", {
+	const linkClass = cva("text-sm  flex items-center transition-colors hover:text-ctp-peach", {
 		variants: {
 			isIntersecting: {
 				true: "text-ctp-peach list-none",
@@ -24,7 +24,7 @@ export function PostIndexItem({ text }: PostIndexItemProps) {
 	const liClass = cva("ml-5", {
 		variants: {
 			isIntersecting: {
-				true: "list-none ml-0",
+				true: "list-none",
 			},
 		},
 	});
@@ -36,7 +36,7 @@ export function PostIndexItem({ text }: PostIndexItemProps) {
 				className={linkClass({
 					isIntersecting,
 				})}>
-				{isIntersecting && <ChevronsRight className="-ml-2 mr-1" />}
+				{isIntersecting && <ChevronsRight className="-ml-7 mr-1 " />}
 				{text}
 			</a>
 		</li>
