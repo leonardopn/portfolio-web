@@ -52,7 +52,7 @@ export default async function BlogPost({ params }: { params: Params }) {
 	const timeToRead = getTimeToReadPost(stringContent);
 
 	return (
-		<main className="post-container flex list-disc flex-col gap-4">
+		<main className="flex list-disc flex-col gap-4">
 			<section>
 				<h1 className="px-3 text-2xl font-bold">{asText(post.data.title)}</h1>
 				<h2 className="px-3 text-base font-light text-ctp-overlay1">
@@ -71,7 +71,7 @@ export default async function BlogPost({ params }: { params: Params }) {
 				<SocialMediaShareBar post={post} />
 			</section>
 			<Divider></Divider>
-			<main className="flex flex-col gap-4 px-3">
+			<main className="post-main-content flex flex-col gap-4 px-3">
 				{post.data.content.map((content, index) => {
 					const hasHeading = !!asText(content.heading);
 					return (
