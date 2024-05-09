@@ -20,6 +20,8 @@
 		"Page: ProjectsPage",
 		"Component: RelatedPost",
 		"Component: ImageZoom",
-		"Component: PostIndexItem"
+		"Component: PostIndexItem",
+		"Component: SocialMediaShareBar",
+		"Component: ThemeModeToggle"
 	]
 }

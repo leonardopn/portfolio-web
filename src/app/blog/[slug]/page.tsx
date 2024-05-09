@@ -2,6 +2,7 @@ import { CodeBlock } from "@/components/CodeBlock";
 import { Divider } from "@/components/Divider";
 import { ImageZoom } from "@/components/ImageZoom";
 import { PostAuthorSection } from "@/components/PostAuthorSection";
+import { SocialMediaShareBar } from "@/components/SocialMediaShareBar";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import { prismicClient } from "@/prismicio";
@@ -64,7 +65,12 @@ export default async function BlogPost({ params }: { params: Params }) {
 				createdAt={post.first_publication_date}
 				updatedAt={post.last_publication_date}
 			/>
-			<Divider />
+			<Divider className="lg:hidden" />
+			<section className="mb-2 flex flex-col items-center justify-center gap-2 lg:hidden">
+				<h3 className="font-medium">Gostou? Compartilhe!</h3>
+				<SocialMediaShareBar post={post} />
+			</section>
+			<Divider></Divider>
 			<main className="flex flex-col gap-4 px-3">
 				{post.data.content.map((content, index) => {
 					const hasHeading = !!asText(content.heading);
@@ -87,6 +93,11 @@ export default async function BlogPost({ params }: { params: Params }) {
 					);
 				})}
 			</main>
+			<Divider className="lg:hidden" />
+			<section className="mb-2 flex flex-col items-center justify-center gap-2 lg:hidden">
+				<h3 className="font-medium">Gostou? Compartilhe!</h3>
+				<SocialMediaShareBar post={post} />
+			</section>
 			<Divider />
 			<footer className="flex flex-wrap gap-2 px-3">
 				{post.tags.map(tag => {
