@@ -5,13 +5,14 @@ import { PostIndex } from "@/components/PostIndex";
 import { ThemeModeToggle } from "@/components/ThemeModeToggle";
 import {
 	Breadcrumb,
-	BreadcrumbList,
 	BreadcrumbItem,
 	BreadcrumbLink,
-	BreadcrumbSeparator,
+	BreadcrumbList,
 	BreadcrumbPage,
+	BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { PATHS } from "@/constants/Path";
+import { PostSectionObserverProvider } from "@/contexts/PostSectionObserverContext";
 import { prismicClient } from "@/prismicio";
 import { asImageSrc, asText } from "@prismicio/client";
 import { CircleChevronLeft } from "lucide-react";
@@ -20,7 +21,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Article, WithContext } from "schema-dts";
 import "./style.scss";
-import { PostSectionObserverProvider } from "@/contexts/PostSectionObserverContext";
+import { SocialMediaShareBar } from "@/components/SocialMediaShareBar";
 
 interface BlogPostLayoutProps {
 	children: React.ReactNode;
@@ -88,12 +89,20 @@ export default async function BlogPostLayout({ children, params }: BlogPostLayou
 				</section>
 			</header>
 			<PostSectionObserverProvider>
-				<main className="grid grid-cols-1 gap-4 lg:grid-cols-3">
-					<CardDefault className="flex flex-col gap-5 rounded-none border-l-0 border-r-0 px-0 py-3 sm:rounded-lg sm:border-l sm:border-r lg:col-span-2">
-						{children}
-					</CardDefault>
+				<main className=" grid grid-cols-1 gap-4 lg:grid-cols-3">
+					<section className=" lg:col-span-2">
+						<SocialMediaShareBar
+							post={article}
+							className="sticky top-24 float-start mr-4 hidden h-fit w-fit flex-col xl:flex"
+						/>
+
+						<CardDefault className="flex flex-col gap-5 rounded-none border-l-0 border-r-0 px-0 py-3 sm:rounded-lg sm:border-l sm:border-r">
+							{children}
+						</CardDefault>
+					</section>
+
 					<PostIndex headers={headers} post={article} />
-					<section className="col-start-1 lg:col-span-2">
+					<section className="col-start-1 lg:col-span-2 xl:hidden">
 						<NextAndPreviousPostSelector
 							nextPost={article.data.nextpost}
 							previousPost={article.data.previouspost}
