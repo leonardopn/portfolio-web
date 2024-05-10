@@ -7,6 +7,7 @@ declare global {
 			// Prismic
 			PRISMIC_ENVIRONMENT: string;
 			PRISMIC_ACCESS_TOKEN: string;
+			PRISMIC_WEBHOOK_SECRET: string;
 		}
 	}
 }
