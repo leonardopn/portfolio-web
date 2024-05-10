@@ -6,7 +6,7 @@ declare global {
 
 			// Prismic
 			PRISMIC_ENVIRONMENT: string;
-			PRISMIC_ACESS_TOKEN: string;
+			PRISMIC_ACCESS_TOKEN: string;
 		}
 	}
 }
