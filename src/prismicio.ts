@@ -9,7 +9,12 @@ import * as prismicNext from "@prismicio/next";
 const routes: prismic.ClientConfig["routes"] = [
 	{
 		type: "blog_post_default",
-		path: "/blog/[slug]",
+		uid: "blog",
+		path: "/blog",
+	},
+	{
+		type: "blog_post_default",
+		path: "/blog/:uid",
 	},
 ];
 

@@ -23,6 +23,7 @@
 		"Component: PostIndexItem",
 		"Component: SocialMediaShareBar",
 		"Component: ThemeModeToggle",
-		"Api: Webhook"
+		"Api: Webhook",
+		"PrismicIO"
 	]
 }
