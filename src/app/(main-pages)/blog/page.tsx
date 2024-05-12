@@ -34,7 +34,9 @@ interface BlogPageProps {
 export default async function BlogPage({ searchParams }: BlogPageProps) {
 	const client = prismicClient();
 
-	const posts: AllDocumentTypes[] = await client.getAllByType("blog_post_default");
+	const posts: AllDocumentTypes[] = await client.getAllByType("blog_post_default", {
+		orderings: [{ field: "document.first_publication_date", direction: "desc" }],
+	});
 
 	const filteredPosts = posts.filter(post => {
 		const filter = searchParams?.filter?.toLowerCase();
