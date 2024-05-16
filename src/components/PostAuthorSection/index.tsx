@@ -15,7 +15,11 @@ export function PostAuthorSection({ timeToRead, createdAt, updatedAt }: PostAuth
 	return (
 		<section className="mx-3 flex items-center gap-2">
 			<Avatar>
-				<AvatarImage src="/me.jpg" fetchPriority="high" />
+				<AvatarImage
+					src="/me.jpg"
+					fetchPriority="high"
+					alt="Leonardo Petta do Nascimento - Foto de perfil"
+				/>
 				<AvatarFallback>LP</AvatarFallback>
 			</Avatar>
 			<div>
