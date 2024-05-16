@@ -20,7 +20,7 @@ export function ProfileResume({
 			<CardDefault className={cn("flex flex-col items-center", photoContainerClassName)}>
 				<Image
 					src="/me.jpg"
-					alt="me"
+					alt="Leonardo Petta do Nascimento - Foto de perfil"
 					width={120}
 					height={120}
 					className="mb-2 rounded-lg"
