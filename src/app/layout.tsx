@@ -50,8 +50,8 @@ export default function RootLayout({
 					defaultTheme="system"
 					enableSystem
 					disableTransitionOnChange>
-					<main className="mx-auto max-w-screen-xl">
-						<Logo className="mb-5 hidden text-center lg:block lg:text-left" />
+					<main className="mx-auto max-w-screen-xl space-y-5">
+						<Logo className=" hidden text-center lg:block lg:text-left" />
 						{children}
 					</main>
 					<GoToTopButton />
