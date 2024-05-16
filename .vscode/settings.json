@@ -24,6 +24,7 @@
 		"Component: SocialMediaShareBar",
 		"Component: ThemeModeToggle",
 		"Api: Webhook",
-		"PrismicIO"
+		"PrismicIO",
+		"Component: CopyToClipboard"
 	]
 }
