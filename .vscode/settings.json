@@ -25,6 +25,7 @@
 		"Component: ThemeModeToggle",
 		"Api: Webhook",
 		"PrismicIO",
-		"Component: CopyToClipboard"
+		"Component: CopyToClipboard",
+		"Component: NavItem"
 	]
 }
