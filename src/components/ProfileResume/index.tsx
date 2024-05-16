@@ -32,8 +32,13 @@ export function ProfileResume({
 					Desenvolvedor Fullstack
 				</h2>
 				<section className="mt-2 flex flex-wrap justify-center gap-2">
-					<SocialMediaButton icon="Github" href="https://github.com/leonardopn" />
 					<SocialMediaButton
+						icon="Github"
+						href="https://github.com/leonardopn"
+						aria-label="Link para o GitHub de Leonardo Petta do Nascimento"
+					/>
+					<SocialMediaButton
+						aria-label="Link para o LinkedIn de Leonardo Petta do Nascimento"
 						icon="Linkedin"
 						href="https://www.linkedin.com/in/leonardo-petta-do-nascimento-75674015b/"
 					/>
