@@ -24,7 +24,7 @@ export function PostAuthorSection({ timeToRead, createdAt, updatedAt }: PostAuth
 			</Avatar>
 			<div>
 				<p>Leonardo Petta do Nascimento</p>
-				<p className="text-sm text-ctp-overlay0">
+				<p className="text-sm text-ctp-overlay1">
 					{timeToRead} min. de leitura · Criado em {formattedCreatedAt}{" "}
 					{isUpdatedAtImportant && ` · Atualizado em ${formattedUpdatedAt}`}
 				</p>

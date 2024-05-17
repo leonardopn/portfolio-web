@@ -60,7 +60,7 @@ export default async function BlogPostLayout({ children, params }: BlogPostLayou
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
 			/>
-			<Logo className="mx-auto block text-center lg:hidden lg:text-left" />
+			<Logo className="mx-auto mt-5 block text-center lg:mt-0 lg:hidden lg:text-left" />
 			<header className="flex flex-col gap-2 p-2 pb-4">
 				<section className="flex justify-between">
 					<Link
