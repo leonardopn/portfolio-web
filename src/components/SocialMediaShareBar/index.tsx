@@ -65,6 +65,7 @@ export function SocialMediaShareBar({ post, className, ...restProps }: SocialMed
 					key={label}
 					icon={icon}
 					href={url}
+					aria-label={`Botão para compartilhar no(a) ${label}`}
 					iconClassName="size-6"
 					className="border border-ctp-surface0 bg-ctp-crust"
 				/>
