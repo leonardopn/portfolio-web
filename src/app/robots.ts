@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
 		rules: {
 			userAgent: "*",
 			allow: "/",
-			disallow: ["/api/", "/slice-simulator/"],
+			disallow: ["/api", "/api/", "/slice-simulator", "/slice-simulator/"],
 		},
 		sitemap: `${process.env.SITE_DOMAIN}/sitemap.xml`,
 		host: process.env.SITE_DOMAIN,
