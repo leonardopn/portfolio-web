@@ -31,6 +31,7 @@ export function CopyToClipboard({ textToCopy }: CopyToClipboardProps) {
 			<Tooltip delayDuration={0} open={copied ? true : undefined}>
 				<TooltipTrigger asChild>
 					<Button
+						aria-label="Copiar código"
 						variant="ghost"
 						className="size-5"
 						size={"icon"}
