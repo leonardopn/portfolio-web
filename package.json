@@ -1,6 +1,6 @@
 {
 	"name": "portfolio-web",
-	"version": "1.4.3",
+	"version": "1.4.4",
 	"private": true,
 	"scripts": {
 		"dev": "concurrently -n NEXT,PRISMIC -c white,yellow \"next dev\" \"yarn slicemachine\" ",
