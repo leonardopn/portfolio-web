@@ -27,6 +27,7 @@
 		"PrismicIO",
 		"Component: CopyToClipboard",
 		"Component: NavItem",
-		"Component: PostPageSkeleton"
+		"Component: PostPageSkeleton",
+		"Component: ProjectPageLoading"
 	]
 }
