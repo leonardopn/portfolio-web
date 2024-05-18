@@ -26,6 +26,9 @@
 		"Api: Webhook",
 		"PrismicIO",
 		"Component: CopyToClipboard",
-		"Component: NavItem"
+		"Component: NavItem",
+		"Component: PostPageSkeleton",
+		"Component: ProjectPageLoading",
+		"Page: About"
 	]
 }
