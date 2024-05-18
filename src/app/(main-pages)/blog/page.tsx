@@ -50,7 +50,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
 	});
 
 	return (
-		<div className="flex h-full flex-col justify-between gap-5 text-ctp-text">
+		<>
 			{!!posts.length && (
 				<header className="flex flex-col gap-5">
 					<p className="text-right text-sm">
@@ -65,6 +65,6 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
 					return <PostCard key={post.uid} post={post} />;
 				})}
 			</main>
-		</div>
+		</>
 	);
 }
