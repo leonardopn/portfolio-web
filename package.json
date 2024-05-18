@@ -13,7 +13,7 @@
 		"slicemachine": "start-slicemachine"
 	},
 	"dependencies": {
-		"@prismicio/client": "^7.4.1",
+		"@prismicio/client": "^7.5.0",
 		"@prismicio/next": "^1.5.0",
 		"@prismicio/react": "^2.7.4",
 		"@radix-ui/react-avatar": "^1.0.4",
@@ -29,17 +29,17 @@
 		"dayjs": "^1.11.11",
 		"highlight.js": "^11.9.0",
 		"lodash": "^4.17.21",
-		"lucide-react": "^0.376.0",
+		"lucide-react": "^0.378.0",
 		"next": "14.2.3",
 		"next-themes": "^0.3.0",
 		"react": "^18",
 		"react-dom": "^18",
 		"react-draggable": "^4.4.6",
 		"react-html-parser": "^2.0.2",
-		"react-icons": "^5.2.0",
+		"react-icons": "^5.2.1",
 		"react-type-animation": "^3.2.0",
 		"react-use": "^17.5.0",
-		"sass": "^1.76.0",
+		"sass": "^1.77.2",
 		"tailwind-merge": "^2.3.0",
 		"tailwindcss-animate": "^1.0.7",
 		"zod": "^3.23.8"
@@ -48,13 +48,13 @@
 		"@catppuccin/highlightjs": "^0.1.4",
 		"@catppuccin/tailwindcss": "^0.1.6",
 		"@slicemachine/adapter-next": "^0.3.38",
-		"@types/lodash": "^4.17.0",
+		"@types/lodash": "^4.17.4",
 		"@types/node": "^20",
 		"@types/react": "^18",
 		"@types/react-dom": "^18",
 		"@types/react-html-parser": "^2",
-		"@typescript-eslint/eslint-plugin": "^7.8.0",
-		"@typescript-eslint/parser": "^7.8.0",
+		"@typescript-eslint/eslint-plugin": "^7.9.0",
+		"@typescript-eslint/parser": "^7.9.0",
 		"autoprefixer": "^10.4.19",
 		"concurrently": "^8.2.2",
 		"eslint": "^8",
@@ -73,5 +73,5 @@
 		"tailwindcss": "^3.4.3",
 		"typescript": "^5"
 	},
-	"packageManager": "yarn@4.1.1"
+	"packageManager": "yarn@4.2.2"
 }
