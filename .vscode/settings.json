@@ -28,6 +28,7 @@
 		"Component: CopyToClipboard",
 		"Component: NavItem",
 		"Component: PostPageSkeleton",
-		"Component: ProjectPageLoading"
+		"Component: ProjectPageLoading",
+		"Page: About"
 	]
 }
