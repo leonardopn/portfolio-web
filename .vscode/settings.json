@@ -29,6 +29,7 @@
 		"Component: NavItem",
 		"Component: PostPageSkeleton",
 		"Component: ProjectPageLoading",
-		"Page: About"
+		"Page: About",
+		"Service: Firebase"
 	]
 }
