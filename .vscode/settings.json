@@ -30,6 +30,7 @@
 		"Component: PostPageSkeleton",
 		"Component: ProjectPageLoading",
 		"Page: About",
-		"Service: Firebase"
+		"Service: Firebase",
+		"Component: Drawer"
 	]
 }
