@@ -80,7 +80,7 @@ export default async function BlogPost({ params }: { params: Params }) {
 							key={asText(content.heading) + `_${index}`}
 							className={`${hasHeading ? "heading-post" : ""} flex flex-col gap-2`}>
 							{hasHeading && (
-								<h2 className=" text-xl font-bold">{asText(content.heading)}</h2>
+								<h2 className="text-xl font-bold">{asText(content.heading)}</h2>
 							)}
 							<div
 								className={cn(

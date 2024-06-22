@@ -12,7 +12,7 @@ export function ProfileBasicInformation({ icon, info, title }: ProfileBasicInfor
 
 	return (
 		<section className="flex items-center gap-2">
-			<span className=" rounded-lg bg-ctp-surface0 p-2">
+			<span className="rounded-lg bg-ctp-surface0 p-2">
 				<LucideIcon className="text-ctp-text" />
 			</span>
 			<div>

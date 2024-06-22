@@ -13,7 +13,7 @@ interface PostIndexProps {
 
 export function PostIndex({ headers, post }: PostIndexProps) {
 	return (
-		<section className="sticky top-4 hidden h-fit  gap-4 lg:flex lg:flex-col">
+		<section className="sticky top-4 hidden h-fit gap-4 lg:flex lg:flex-col">
 			<CardDefault className="flex flex-col gap-2">
 				<h1 className="flex gap-2 text-base font-bold">
 					<BookMarked className="text-ctp-peach" />
@@ -34,7 +34,7 @@ export function PostIndex({ headers, post }: PostIndexProps) {
 				<Divider className="my-2" />
 				<SocialMediaShareBar post={post} />
 			</CardDefault>
-			<section className="col-start-3 ">
+			<section className="col-start-3">
 				<NextAndPreviousPostSelector
 					nextPost={post.data.nextpost}
 					previousPost={post.data.previouspost}

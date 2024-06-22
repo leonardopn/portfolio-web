@@ -5,15 +5,15 @@ export default function ProjectPageLoading() {
 	const ProjectCardSkeleton = (
 		<CardDefault className="flex flex-col gap-5">
 			<div className="flex flex-col gap-2">
-				<Skeleton className="h-7 " />
-				<Skeleton className="h-4 " />
+				<Skeleton className="h-7" />
+				<Skeleton className="h-4" />
 				<Skeleton className="h-4 w-1/2" />
 			</div>
 			<div className="flex flex-col gap-2">
-				<Skeleton className="h-3 " />
-				<Skeleton className="h-3 " />
-				<Skeleton className="h-3 " />
-				<Skeleton className="h-3 " />
+				<Skeleton className="h-3" />
+				<Skeleton className="h-3" />
+				<Skeleton className="h-3" />
+				<Skeleton className="h-3" />
 			</div>
 
 			<div className="flex justify-between">

@@ -4,8 +4,8 @@ import { Skeleton } from "../ui/skeleton";
 
 export function PostPageSkeleton() {
 	return (
-		<main className=" grid grid-cols-1 gap-4 lg:grid-cols-3">
-			<section className=" lg:col-span-2">
+		<main className="grid grid-cols-1 gap-4 lg:grid-cols-3">
+			<section className="lg:col-span-2">
 				<section className="sticky top-24 float-start mr-4 hidden h-fit w-fit flex-col gap-2 xl:flex">
 					<Skeleton className="size-11" />
 					<Skeleton className="size-11" />
@@ -18,7 +18,7 @@ export function PostPageSkeleton() {
 					<main className="flex list-disc flex-col gap-4">
 						<section>
 							<Skeleton className="mx-3 mb-2 h-10" />
-							<Skeleton className="mx-3 h-8 " />
+							<Skeleton className="mx-3 h-8" />
 						</section>
 						<Skeleton className="h-96 rounded-none" />
 						<section className="mx-3 flex gap-2">
@@ -29,8 +29,8 @@ export function PostPageSkeleton() {
 							</div>
 						</section>
 						<Divider className="lg:hidden" />
-						<section className="mx-3 flex flex-col items-center gap-4 lg:hidden ">
-							<Skeleton className="h-4 w-full max-w-32 " />
+						<section className="mx-3 flex flex-col items-center gap-4 lg:hidden">
+							<Skeleton className="h-4 w-full max-w-32" />
 							<div className="flex gap-2">
 								<Skeleton className="size-9" />
 								<Skeleton className="size-9" />
@@ -40,7 +40,7 @@ export function PostPageSkeleton() {
 							</div>
 						</section>
 						<Divider />
-						<section className="mx-3 flex  flex-col gap-4">
+						<section className="mx-3 flex flex-col gap-4">
 							<section className="flex flex-col gap-2">
 								<Skeleton className="h-4 w-full" />
 								<Skeleton className="h-4 w-full" />
@@ -57,7 +57,7 @@ export function PostPageSkeleton() {
 
 							<section className="flex flex-col gap-2">
 								<Skeleton className="h-4 w-full max-w-md" />
-								<Skeleton className="h-4 w-full " />
+								<Skeleton className="h-4 w-full" />
 								<Skeleton className="h-4 w-full max-w-md" />
 							</section>
 							<Skeleton className="h-96 rounded-lg" />
@@ -76,19 +76,19 @@ export function PostPageSkeleton() {
 						</section>
 						<Divider />
 						<section className="mx-3 flex flex-wrap gap-2">
-							<Skeleton className="h-4 w-full max-w-20 " />
-							<Skeleton className="h-4 w-full max-w-20 " />
-							<Skeleton className="h-4 w-full max-w-20 " />
-							<Skeleton className="h-4 w-full max-w-20 " />
-							<Skeleton className="h-4 w-full max-w-20 " />
-							<Skeleton className="h-4 w-full max-w-20 " />
+							<Skeleton className="h-4 w-full max-w-20" />
+							<Skeleton className="h-4 w-full max-w-20" />
+							<Skeleton className="h-4 w-full max-w-20" />
+							<Skeleton className="h-4 w-full max-w-20" />
+							<Skeleton className="h-4 w-full max-w-20" />
+							<Skeleton className="h-4 w-full max-w-20" />
 						</section>
 					</main>
 				</CardDefault>
 			</section>
 			<section className="sticky top-4 flex h-fit flex-col gap-4">
-				<CardDefault className="hidden  gap-4 lg:flex lg:flex-col">
-					<Skeleton className="h-10 " />
+				<CardDefault className="hidden gap-4 lg:flex lg:flex-col">
+					<Skeleton className="h-10" />
 					<Divider />
 					<Skeleton className="h-4 w-full" />
 					<Skeleton className="h-4 w-full max-w-32" />
@@ -97,7 +97,7 @@ export function PostPageSkeleton() {
 				</CardDefault>
 
 				<CardDefault className="hidden gap-4 lg:flex lg:flex-col">
-					<Skeleton className="h-10 " />
+					<Skeleton className="h-10" />
 					<Divider />
 					<section className="flex flex-wrap gap-2">
 						<Skeleton className="size-11" />
@@ -107,8 +107,8 @@ export function PostPageSkeleton() {
 						<Skeleton className="size-11" />
 					</section>
 				</CardDefault>
-				<section className="flex  justify-between">
-					<Skeleton className="h-8 w-32 " />
+				<section className="flex justify-between">
+					<Skeleton className="h-8 w-32" />
 					<Skeleton className="h-8 w-32" />
 				</section>
 			</section>

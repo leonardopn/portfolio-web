@@ -22,7 +22,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
 					<h2 className="text-sm text-ctp-subtext1 sm:text-base">{project.resume}</h2>
 				</section>
 
-				<section className="rounded-lg border-ctp-surface0 text-sm sm:border sm:bg-ctp-crust sm:p-2 sm:text-base  sm:shadow-inner">
+				<section className="rounded-lg border-ctp-surface0 text-sm sm:border sm:bg-ctp-crust sm:p-2 sm:text-base sm:shadow-inner">
 					<p>{project.description}</p>
 				</section>
 

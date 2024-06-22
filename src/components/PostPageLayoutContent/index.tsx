@@ -51,8 +51,8 @@ export default async function PostPageLayoutContent({
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
 			/>
-			<main className=" grid grid-cols-1 gap-4 lg:grid-cols-3">
-				<section className=" lg:col-span-2">
+			<main className="grid grid-cols-1 gap-4 lg:grid-cols-3">
+				<section className="lg:col-span-2">
 					<SocialMediaShareBar
 						post={article}
 						className="sticky top-24 float-start mr-4 hidden h-fit w-fit flex-col xl:flex"

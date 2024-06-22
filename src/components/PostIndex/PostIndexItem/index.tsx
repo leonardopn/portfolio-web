@@ -36,7 +36,7 @@ export function PostIndexItem({ text }: PostIndexItemProps) {
 				className={linkClass({
 					isIntersecting,
 				})}>
-				{isIntersecting && <ChevronsRight className="-ml-7 mr-1 " />}
+				{isIntersecting && <ChevronsRight className="-ml-7 mr-1" />}
 				{text}
 			</a>
 		</li>

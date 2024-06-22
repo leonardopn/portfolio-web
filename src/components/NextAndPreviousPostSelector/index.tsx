@@ -82,7 +82,7 @@ async function RelatedPost({ post, className, isNext = false, ...props }: Relate
 					</TooltipTrigger>
 					<TooltipContent>
 						{!!article && (
-							<div className="max-w-80 ">
+							<div className="max-w-80">
 								<h1>{asText(article.data.title)}</h1>
 								<h2 className="text-xs text-ctp-overlay1">
 									{asText(article.data.subtitle)}
