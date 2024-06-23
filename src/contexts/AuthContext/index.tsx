@@ -1,12 +1,16 @@
 "use client";
 
+import { useToast } from "@/components/ui/use-toast";
 import { AUTH } from "@/services/firebase";
 import {
+	AuthError,
 	GithubAuthProvider,
-	User,
-	signInWithRedirect,
-	ProviderId,
 	GoogleAuthProvider,
+	ProviderId,
+	User,
+	AuthErrorCodes,
+	getRedirectResult,
+	signInWithRedirect,
 } from "firebase/auth";
 import { ReactNode, createContext, useCallback, useContext, useEffect, useState } from "react";
 
@@ -35,13 +39,40 @@ export function AuthProvider({ children }: AuthProviderProps) {
 	const [isStartingAuth, setIsStartingAuth] = useState(false);
 	const [lastAuthProviderUsed, setLastAuthProviderUsed] = useState<AuthProviders | null>(null);
 
-	useEffect(() => {
+	const { toast } = useToast();
+
+	const getAvailableOauthProviders = useCallback((providerId: AuthProviders) => {
+		switch (providerId) {
+			case "GOOGLE":
+				return new GoogleAuthProvider();
+			case "GITHUB":
+				return new GithubAuthProvider();
+			default:
+				throw new Error("Provider not implemented");
+		}
+	}, []);
+
+	const handleProcessAuth = useCallback(async () => {
+		try {
+			await getRedirectResult(AUTH);
+		} catch (e) {
+			const error = e as AuthError;
+
+			if (error.code === AuthErrorCodes.NEED_CONFIRMATION) {
+				toast({
+					title: "Conta não associada ao provedor selecionado.",
+					description: `identificamos que há uma conta associada ao email "${error.customData.email}", porém o provedor selecionado não está habilitado nas configurações.`,
+					variant: "destructive",
+				});
+			}
+		}
+
 		AUTH.onAuthStateChanged(user => {
 			setIsLoading(true);
 			setUser(user);
 			setIsLoading(false);
 		});
-	}, []);
+	}, [toast]);
 
 	const handleLogOut = useCallback(() => {
 		AUTH.signOut();
@@ -51,19 +82,23 @@ export function AuthProvider({ children }: AuthProviderProps) {
 		setIsStartingAuth(true);
 		setLastAuthProviderUsed("GITHUB");
 
-		const provider = new GithubAuthProvider();
+		const provider = getAvailableOauthProviders("GITHUB");
 
 		return signInWithRedirect(AUTH, provider);
-	}, []);
+	}, [getAvailableOauthProviders]);
 
 	const handleLoginWithGoogle = useCallback(() => {
 		setIsStartingAuth(true);
 		setLastAuthProviderUsed("GOOGLE");
 
-		const provider = new GoogleAuthProvider();
+		const provider = getAvailableOauthProviders("GOOGLE");
 
 		return signInWithRedirect(AUTH, provider);
-	}, []);
+	}, [getAvailableOauthProviders]);
+
+	useEffect(() => {
+		handleProcessAuth();
+	}, [handleProcessAuth]);
 
 	return (
 		<AuthContext.Provider

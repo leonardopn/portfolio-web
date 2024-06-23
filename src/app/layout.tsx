@@ -10,6 +10,7 @@ import { PrismicPreview } from "@prismicio/next";
 import "./globals.scss";
 import { UserAvatar } from "@/components/UserAvatar";
 import { AuthProvider } from "@/contexts/AuthContext";
+import { Toaster } from "@/components/ui/toaster";
 
 const fontDefault = JetBrains_Mono({ subsets: ["latin"] });
 
@@ -66,6 +67,7 @@ export default function RootLayout({
 					<PrismicPreview repositoryName={process.env.PRISMIC_ENVIRONMENT} />
 				</AuthProvider>
 			</body>
+			<Toaster />
 			<Analytics />
 			<SpeedInsights />
 		</html>
