@@ -1,14 +1,11 @@
 import { GithubLoginButton } from "../GithubLoginButton";
-import { Button } from "../ui/button";
 import {
-	DrawerTrigger,
+	Drawer,
 	DrawerContent,
+	DrawerDescription,
 	DrawerHeader,
 	DrawerTitle,
-	DrawerDescription,
-	DrawerFooter,
-	DrawerClose,
-	Drawer,
+	DrawerTrigger,
 } from "../ui/drawer";
 
 interface LoginDrawerProps {

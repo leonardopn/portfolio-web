@@ -8,6 +8,14 @@ const nextConfig = {
 			},
 		],
 	},
+	rewrites: async () => {
+		return [
+			{
+				source: "/__/auth",
+				destination: `https://${process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN}`,
+			},
+		];
+	},
 };
 
 export default nextConfig;
