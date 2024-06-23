@@ -1,4 +1,5 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
 
-npx lint-staged --allow-empty --config .lintStaged/pre-commit.js --concurrent false
+yarn lint-staged --config .lintStaged/pre-commit.js --concurrent false
+
