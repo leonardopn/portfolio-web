@@ -8,6 +8,7 @@ import type { Metadata } from "next";
 import { JetBrains_Mono } from "next/font/google";
 import { PrismicPreview } from "@prismicio/next";
 import "./globals.scss";
+import { UserAvatar } from "@/components/UserAvatar";
 
 const fontDefault = JetBrains_Mono({ subsets: ["latin"] });
 
@@ -51,7 +52,11 @@ export default function RootLayout({
 					enableSystem
 					disableTransitionOnChange>
 					<main className="mx-auto max-w-screen-xl lg:space-y-5">
-						<Logo className="hidden text-center lg:block lg:text-left" />
+						<section className="flex items-center justify-between">
+							<Logo className="hidden text-center lg:block lg:text-left" />
+							<UserAvatar />
+						</section>
+
 						{children}
 					</main>
 					<GoToTopButton />
