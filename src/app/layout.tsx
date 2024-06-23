@@ -9,6 +9,7 @@ import { JetBrains_Mono } from "next/font/google";
 import { PrismicPreview } from "@prismicio/next";
 import "./globals.scss";
 import { UserAvatar } from "@/components/UserAvatar";
+import { AuthProvider } from "@/contexts/AuthContext";
 
 const fontDefault = JetBrains_Mono({ subsets: ["latin"] });
 
@@ -46,22 +47,24 @@ export default function RootLayout({
 					"text-text ctp-latte min-h-screen bg-ctp-base dark:ctp-mocha sm:!p-5",
 					fontDefault.className
 				)}>
-				<ThemeProvider
-					attribute="class"
-					defaultTheme="system"
-					enableSystem
-					disableTransitionOnChange>
-					<main className="mx-auto max-w-screen-xl lg:space-y-5">
-						<section className="flex items-center justify-between">
-							<Logo className="hidden text-center lg:block lg:text-left" />
-							<UserAvatar />
-						</section>
+				<AuthProvider>
+					<ThemeProvider
+						attribute="class"
+						defaultTheme="system"
+						enableSystem
+						disableTransitionOnChange>
+						<main className="mx-auto max-w-screen-xl lg:space-y-5">
+							<section className="flex items-center justify-between">
+								<Logo className="hidden text-center lg:block lg:text-left" />
+								<UserAvatar />
+							</section>
 
-						{children}
-					</main>
-					<GoToTopButton />
-				</ThemeProvider>
-				<PrismicPreview repositoryName={process.env.PRISMIC_ENVIRONMENT} />
+							{children}
+						</main>
+						<GoToTopButton />
+					</ThemeProvider>
+					<PrismicPreview repositoryName={process.env.PRISMIC_ENVIRONMENT} />
+				</AuthProvider>
 			</body>
 			<Analytics />
 			<SpeedInsights />

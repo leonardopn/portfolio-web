@@ -1,32 +1,23 @@
 "use client";
 
-import { AUTH } from "@/services/firebase";
 import {
 	DropdownMenu,
 	DropdownMenuContent,
 	DropdownMenuItem,
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { User } from "firebase/auth";
+import { useAuthContext } from "@/contexts/AuthContext";
 import { LogIn, LogOut } from "lucide-react";
-import { useEffect, useState } from "react";
 import { CardDefault } from "../CardDefault";
 import { LoginDrawer } from "../LoginDrawer";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { Button } from "../ui/button";
+import { Skeleton } from "../ui/skeleton";
 
 export function UserAvatar() {
-	const [user, setUser] = useState<User | null>(null);
+	const { handleLogOut, user, isLoading } = useAuthContext();
 
-	useEffect(() => {
-		AUTH.onAuthStateChanged(user => {
-			setUser(user);
-		});
-	}, []);
-
-	function handleLogOut() {
-		AUTH.signOut();
-	}
+	if (isLoading) return <Skeleton className="h-12 w-12 rounded-full" />;
 
 	if (!user)
 		return (

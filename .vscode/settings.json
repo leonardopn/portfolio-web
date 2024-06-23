@@ -32,6 +32,7 @@
 		"Page: About",
 		"Service: Firebase",
 		"Component: Drawer",
-		"Component: DropdownMenu"
+		"Component: DropdownMenu",
+		"Context: Auth"
 	]
 }
