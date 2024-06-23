@@ -1,7 +1,13 @@
 "use client";
 
 import { AUTH } from "@/services/firebase";
-import { GithubAuthProvider, User, signInWithRedirect, ProviderId } from "firebase/auth";
+import {
+	GithubAuthProvider,
+	User,
+	signInWithRedirect,
+	ProviderId,
+	GoogleAuthProvider,
+} from "firebase/auth";
 import { ReactNode, createContext, useCallback, useContext, useEffect, useState } from "react";
 
 type AuthProviders = keyof typeof ProviderId;
@@ -14,6 +20,7 @@ interface AuthContextProps {
 
 	handleLogOut: VoidFunction;
 	handleLoginWithGithub: () => Promise<never>;
+	handleLoginWithGoogle: () => Promise<never>;
 }
 
 interface AuthProviderProps {
@@ -49,6 +56,15 @@ export function AuthProvider({ children }: AuthProviderProps) {
 		return signInWithRedirect(AUTH, provider);
 	}, []);
 
+	const handleLoginWithGoogle = useCallback(() => {
+		setIsStartingAuth(true);
+		setLastAuthProviderUsed("GOOGLE");
+
+		const provider = new GoogleAuthProvider();
+
+		return signInWithRedirect(AUTH, provider);
+	}, []);
+
 	return (
 		<AuthContext.Provider
 			value={{
@@ -58,6 +74,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
 				lastAuthProviderUsed,
 				handleLogOut,
 				handleLoginWithGithub,
+				handleLoginWithGoogle,
 			}}>
 			{children}
 		</AuthContext.Provider>

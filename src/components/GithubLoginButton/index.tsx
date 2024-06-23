@@ -9,8 +9,12 @@ export function GithubLoginButton({ ...restProps }: GithubLoginButtonProps) {
 	const { handleLoginWithGithub, isStartingAuth, lastAuthProviderUsed } = useAuthContext();
 
 	return (
-		<Button {...restProps} onClick={handleLoginWithGithub} disabled={isStartingAuth}>
-			{isStartingAuth && lastAuthProviderUsed ? (
+		<Button
+			{...restProps}
+			onClick={handleLoginWithGithub}
+			disabled={isStartingAuth}
+			className="transition-opacity hover:opacity-80 dark:hover:opacity-100">
+			{isStartingAuth && lastAuthProviderUsed === "GITHUB" ? (
 				<Loader2 className="mr-2 size-6 animate-spin" />
 			) : (
 				<FaGithub className="mr-2 size-6" />
