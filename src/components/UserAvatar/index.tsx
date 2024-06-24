@@ -7,7 +7,7 @@ import {
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useAuthContext } from "@/contexts/AuthContext";
-import { LogIn, LogOut } from "lucide-react";
+import { LogIn, LogOut, Settings } from "lucide-react";
 import { CardDefault } from "../CardDefault";
 import { LoginDrawer } from "../LoginDrawer";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
@@ -15,9 +15,17 @@ import { Button } from "../ui/button";
 import { Skeleton } from "../ui/skeleton";
 //@ts-expect-error Módulo está com problema na tipagem
 import { getNameInitials } from "toolkit-extra/string";
+import { Divider } from "../Divider";
+import { SettingsDrawer } from "../SettingsDrawer";
+import { useState } from "react";
 
 export function UserAvatar() {
+	const [isSettingsOpen, setIsSettingsOpen] = useState(false);
 	const { handleLogOut, user, isLoading } = useAuthContext();
+
+	function handleOpenSettings() {
+		setIsSettingsOpen(true);
+	}
 
 	if (isLoading) return <Skeleton className="h-12 w-12 rounded-full" />;
 
@@ -33,26 +41,33 @@ export function UserAvatar() {
 		);
 
 	return (
-		<DropdownMenu>
-			<DropdownMenuTrigger>
-				<CardDefault className="flex items-center gap-2 rounded-full p-1">
-					<Avatar>
-						<AvatarImage
-							src={user.photoURL || ""}
-							fetchPriority="high"
-							alt={"Foto do usuário"}
-						/>
-						<AvatarFallback className="text-xs">
-							{getNameInitials(user.displayName) || "S/N"}
-						</AvatarFallback>
-					</Avatar>
-				</CardDefault>
-			</DropdownMenuTrigger>
-			<DropdownMenuContent align="end">
-				<DropdownMenuItem onClick={handleLogOut}>
-					<LogOut className="mr-2 size-5" /> Sair
-				</DropdownMenuItem>
-			</DropdownMenuContent>
-		</DropdownMenu>
+		<>
+			<SettingsDrawer open={isSettingsOpen} onOpenChange={setIsSettingsOpen} />
+			<DropdownMenu>
+				<DropdownMenuTrigger>
+					<CardDefault className="flex items-center gap-2 rounded-full p-1">
+						<Avatar>
+							<AvatarImage
+								src={user.photoURL || ""}
+								fetchPriority="high"
+								alt={"Foto do usuário"}
+							/>
+							<AvatarFallback className="text-xs">
+								{getNameInitials(user.displayName) || "S/N"}
+							</AvatarFallback>
+						</Avatar>
+					</CardDefault>
+				</DropdownMenuTrigger>
+				<DropdownMenuContent align="end">
+					<DropdownMenuItem onClick={handleOpenSettings}>
+						<Settings className="mr-2 size-5" /> Configurações
+					</DropdownMenuItem>
+					<Divider className="my-1" />
+					<DropdownMenuItem onClick={handleLogOut}>
+						<LogOut className="mr-2 size-5" /> Sair
+					</DropdownMenuItem>
+				</DropdownMenuContent>
+			</DropdownMenu>
+		</>
 	);
 }
