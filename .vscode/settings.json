@@ -33,6 +33,7 @@
 		"Service: Firebase",
 		"Component: Drawer",
 		"Component: DropdownMenu",
-		"Context: Auth"
+		"Context: Auth",
+		"Component: UserAvatar"
 	]
 }

@@ -13,6 +13,8 @@ import { LoginDrawer } from "../LoginDrawer";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { Button } from "../ui/button";
 import { Skeleton } from "../ui/skeleton";
+//@ts-expect-error Módulo está com problema na tipagem
+import { getNameInitials } from "toolkit-extra/string";
 
 export function UserAvatar() {
 	const { handleLogOut, user, isLoading } = useAuthContext();
@@ -40,7 +42,9 @@ export function UserAvatar() {
 							fetchPriority="high"
 							alt={"Foto do usuário"}
 						/>
-						<AvatarFallback>{user.displayName || "S/N"}</AvatarFallback>
+						<AvatarFallback className="text-xs">
+							{getNameInitials(user.displayName) || "S/N"}
+						</AvatarFallback>
 					</Avatar>
 				</CardDefault>
 			</DropdownMenuTrigger>
