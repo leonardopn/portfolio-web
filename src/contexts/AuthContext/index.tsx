@@ -25,8 +25,7 @@ interface AuthContextProps {
 	lastAuthProviderUsed: AuthProviders | null;
 
 	handleLogOut: VoidFunction;
-	handleLoginWithGithub: () => Promise<UserCredential>;
-	handleLoginWithGoogle: () => Promise<UserCredential>;
+	handleLoginOauth: (providerId: AuthProviders) => Promise<UserCredential>;
 }
 
 interface AuthProviderProps {
@@ -80,39 +79,25 @@ export function AuthProvider({ children }: AuthProviderProps) {
 		AUTH.signOut();
 	}, []);
 
-	const handleLoginWithGithub = useCallback(() => {
-		try {
-			setIsStartingAuth(true);
-			setLastAuthProviderUsed("GITHUB");
+	const handleLoginOauth = useCallback(
+		(providerId: AuthProviders) => {
+			try {
+				setIsStartingAuth(true);
+				setLastAuthProviderUsed(providerId);
 
-			const provider = getAvailableOauthProviders("GITHUB");
+				const provider = getAvailableOauthProviders(providerId);
 
-			if (user) {
-				return linkWithPopup(user, provider);
+				if (user) {
+					return linkWithPopup(user, provider);
+				}
+
+				return signInWithRedirect(AUTH, provider);
+			} finally {
+				setIsStartingAuth(false);
 			}
-
-			return signInWithRedirect(AUTH, provider);
-		} finally {
-			setIsStartingAuth(false);
-		}
-	}, [getAvailableOauthProviders, user]);
-
-	const handleLoginWithGoogle = useCallback(() => {
-		try {
-			setIsStartingAuth(true);
-			setLastAuthProviderUsed("GOOGLE");
-
-			const provider = getAvailableOauthProviders("GOOGLE");
-
-			if (user) {
-				return linkWithPopup(user, provider);
-			}
-
-			return signInWithRedirect(AUTH, provider);
-		} finally {
-			setIsStartingAuth(false);
-		}
-	}, [getAvailableOauthProviders, user]);
+		},
+		[getAvailableOauthProviders, user]
+	);
 
 	useEffect(() => {
 		handleProcessAuth();
@@ -126,8 +111,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
 				isStartingAuth,
 				lastAuthProviderUsed,
 				handleLogOut,
-				handleLoginWithGithub,
-				handleLoginWithGoogle,
+				handleLoginOauth,
 			}}>
 			{children}
 		</AuthContext.Provider>

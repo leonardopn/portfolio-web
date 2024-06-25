@@ -6,12 +6,12 @@ import { Loader2 } from "lucide-react";
 interface GithubLoginButtonProps extends ButtonProps {}
 
 export function GithubLoginButton({ ...restProps }: GithubLoginButtonProps) {
-	const { handleLoginWithGithub, isStartingAuth, lastAuthProviderUsed } = useAuthContext();
+	const { handleLoginOauth, isStartingAuth, lastAuthProviderUsed } = useAuthContext();
 
 	return (
 		<Button
 			{...restProps}
-			onClick={handleLoginWithGithub}
+			onClick={() => handleLoginOauth("GITHUB")}
 			disabled={isStartingAuth}
 			className="transition-opacity hover:opacity-80 dark:hover:opacity-100">
 			{isStartingAuth && lastAuthProviderUsed === "GITHUB" ? (

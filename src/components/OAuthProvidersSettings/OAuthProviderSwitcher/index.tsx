@@ -13,19 +13,19 @@ interface OAuthProviderSwitcherProps {
 export function OAuthProviderSwitcher({ providerId }: OAuthProviderSwitcherProps) {
 	const [isLoading, setIsLoading] = useState(false);
 
-	const { user, handleLoginWithGithub, handleLoginWithGoogle } = useAuthContext();
+	const { user, handleLoginOauth } = useAuthContext();
 	const { toast } = useToast();
 
-	const { Icon, label, linkFn } = useMemo(() => {
+	const { Icon, label } = useMemo(() => {
 		switch (providerId) {
 			case "GITHUB":
-				return { Icon: FaGithub, label: "Github", linkFn: handleLoginWithGithub };
+				return { Icon: FaGithub, label: "Github" };
 			case "GOOGLE":
-				return { Icon: FcGoogle, label: "Google", linkFn: handleLoginWithGoogle };
+				return { Icon: FcGoogle, label: "Google" };
 			default:
 				throw new Error(`Provider "${providerId}" not implemented`);
 		}
-	}, [handleLoginWithGithub, handleLoginWithGoogle, providerId]);
+	}, [providerId]);
 
 	const switcherInitialValue = useMemo(() => {
 		return (
@@ -38,7 +38,7 @@ export function OAuthProviderSwitcher({ providerId }: OAuthProviderSwitcherProps
 		try {
 			setIsLoading(true);
 			if (linkStatus) {
-				await linkFn();
+				await handleLoginOauth(providerId);
 			} else {
 				user && (await unlink(user, ProviderId[providerId]));
 			}
