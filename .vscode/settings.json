@@ -35,6 +35,7 @@
 		"Component: DropdownMenu",
 		"Context: Auth",
 		"Component: UserAvatar",
-		"Component: SettingsDrawer"
+		"Component: SettingsDrawer",
+		"Component: Switch"
 	]
 }
