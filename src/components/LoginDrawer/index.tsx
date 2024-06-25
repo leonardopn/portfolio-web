@@ -1,3 +1,4 @@
+import { Divider } from "../Divider";
 import { GithubLoginButton } from "../GithubLoginButton";
 import { GoogleLoginButton } from "../GoogleLoginButton";
 import {
@@ -24,6 +25,7 @@ export function LoginDrawer({ children }: LoginDrawerProps) {
 						Entre com sua conta para acessar mais recursos nos blog.
 					</DrawerDescription>
 				</DrawerHeader>
+				<Divider />
 				<div className="flex flex-col gap-4 p-4">
 					<GithubLoginButton className="w-full" />
 					<GoogleLoginButton className="w-full" />

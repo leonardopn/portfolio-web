@@ -45,7 +45,7 @@ export function UserAvatar() {
 			<SettingsDrawer open={isSettingsOpen} onOpenChange={setIsSettingsOpen} />
 			<DropdownMenu>
 				<DropdownMenuTrigger>
-					<CardDefault className="flex items-center gap-2 rounded-full p-1">
+					<CardDefault className="flex items-center gap-2 rounded-full p-1 transition-transform hover:scale-105">
 						<Avatar>
 							<AvatarImage
 								src={user.photoURL || ""}

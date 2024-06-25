@@ -4,12 +4,14 @@ import { useToast } from "@/components/ui/use-toast";
 import { AUTH } from "@/services/firebase";
 import {
 	AuthError,
+	AuthErrorCodes,
 	GithubAuthProvider,
 	GoogleAuthProvider,
 	ProviderId,
 	User,
-	AuthErrorCodes,
+	UserCredential,
 	getRedirectResult,
+	linkWithPopup,
 	signInWithRedirect,
 } from "firebase/auth";
 import { ReactNode, createContext, useCallback, useContext, useEffect, useState } from "react";
@@ -23,8 +25,8 @@ interface AuthContextProps {
 	lastAuthProviderUsed: AuthProviders | null;
 
 	handleLogOut: VoidFunction;
-	handleLoginWithGithub: () => Promise<never>;
-	handleLoginWithGoogle: () => Promise<never>;
+	handleLoginWithGithub: () => Promise<UserCredential>;
+	handleLoginWithGoogle: () => Promise<UserCredential>;
 }
 
 interface AuthProviderProps {
@@ -79,22 +81,38 @@ export function AuthProvider({ children }: AuthProviderProps) {
 	}, []);
 
 	const handleLoginWithGithub = useCallback(() => {
-		setIsStartingAuth(true);
-		setLastAuthProviderUsed("GITHUB");
+		try {
+			setIsStartingAuth(true);
+			setLastAuthProviderUsed("GITHUB");
 
-		const provider = getAvailableOauthProviders("GITHUB");
+			const provider = getAvailableOauthProviders("GITHUB");
 
-		return signInWithRedirect(AUTH, provider);
-	}, [getAvailableOauthProviders]);
+			if (user) {
+				return linkWithPopup(user, provider);
+			}
+
+			return signInWithRedirect(AUTH, provider);
+		} finally {
+			setIsStartingAuth(false);
+		}
+	}, [getAvailableOauthProviders, user]);
 
 	const handleLoginWithGoogle = useCallback(() => {
-		setIsStartingAuth(true);
-		setLastAuthProviderUsed("GOOGLE");
+		try {
+			setIsStartingAuth(true);
+			setLastAuthProviderUsed("GOOGLE");
 
-		const provider = getAvailableOauthProviders("GOOGLE");
+			const provider = getAvailableOauthProviders("GOOGLE");
 
-		return signInWithRedirect(AUTH, provider);
-	}, [getAvailableOauthProviders]);
+			if (user) {
+				return linkWithPopup(user, provider);
+			}
+
+			return signInWithRedirect(AUTH, provider);
+		} finally {
+			setIsStartingAuth(false);
+		}
+	}, [getAvailableOauthProviders, user]);
 
 	useEffect(() => {
 		handleProcessAuth();
